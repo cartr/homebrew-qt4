@@ -33,7 +33,7 @@ class Libechonest < Formula
         return 0;
       }
     EOS
-    qt = Formula["qt"]
+    qt = Formula["cartr/qt4/qt"]
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lechonest", "-F#{qt.opt_lib}",
       "-framework", "QtCore", "-I#{qt.opt_include}/QtCore",
       "-I#{qt.opt_include}/QtNetwork", "-o", "test"
