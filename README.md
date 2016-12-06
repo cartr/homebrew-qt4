@@ -6,8 +6,6 @@ This Homebrew tap allows you to install Qt4 (and various packages that depend on
     brew tap-pin cartr/qt4
     brew install qt
 
-The installation may take a little while, since Qt4 will be recompiled from source.
-
 Feel free to submit an issue or pull request if you run into any problems or have any suggestions for improvements to the packages.
 
 **Please note:** Qt4 is unsupported by its creators, so there are likely security/usability problems with it that will never be resolved. If you can, please consider migrating your projects to Qt5.
