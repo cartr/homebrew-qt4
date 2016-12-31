@@ -13,7 +13,7 @@ class Libechonest < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
   depends_on "qjson"
 
   conflicts_with "doxygen", :because => "cmake fails to configure build."
@@ -33,7 +33,7 @@ class Libechonest < Formula
         return 0;
       }
     EOS
-    qt = Formula["cartr/qt4/qt"]
+    qt = Formula["cartr/qt4/qt4"]
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lechonest", "-F#{qt.opt_lib}",
       "-framework", "QtCore", "-I#{qt.opt_include}/QtCore",
       "-I#{qt.opt_include}/QtNetwork", "-o", "test"

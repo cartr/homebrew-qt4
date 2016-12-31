@@ -5,7 +5,7 @@ class CutyCapt < Formula
   version "0.0.6"
   sha256 "cf85226a25731aff644f87a4e40b8878154667a6725a4dc0d648d7ec2d842264"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   def install
     system "qmake", "CONFIG-=app_bundle"

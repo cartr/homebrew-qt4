@@ -5,7 +5,7 @@ class Automoc4 < Formula
   sha256 "234116f4c05ae21d828594d652b4c4a052ef75727e2d8a4f3a4fb605de9e4c49"
 
   depends_on "cmake" => :build
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   # Patch needed to find Qt in Homebrew upstreamed but upstream version
   # does not apply. Won't be needed for next version.

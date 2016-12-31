@@ -17,7 +17,7 @@ class Pyside < Formula
 
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   if build.with? "python3"
     depends_on "cartr/qt4/shiboken" => "with-python3"
@@ -34,7 +34,7 @@ class Pyside < Formula
       abi = `#{python} -c 'import sysconfig as sc; print(sc.get_config_var("SOABI"))'`.strip
       python_suffix = python == "python" ? "-python2.7" : ".#{abi}"
       mkdir "macbuild#{version}" do
-        qt = Formula["cartr/qt4/qt"].opt_prefix
+        qt = Formula["cartr/qt4/qt4"].opt_prefix
         args = std_cmake_args + %W[
           -DSITE_PACKAGE=#{lib}/python#{version}/site-packages
           -DALTERNATIVE_QT_INCLUDE_DIR=#{qt}/include
@@ -48,7 +48,7 @@ class Pyside < Formula
       end
     end
 
-    inreplace include/"PySide/pyside_global.h", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+    inreplace include/"PySide/pyside_global.h", Formula["cartr/qt4/qt4"].prefix, Formula["cartr/qt4/qt4"].opt_prefix
   end
 
   test do

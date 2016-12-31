@@ -1,5 +1,5 @@
-class Pyqt < Formula
-  desc "Python bindings for Qt"
+class Pyqt4 < Formula
+  desc "Python bindings for Qt4"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
   url "https://downloads.sf.net/project/pyqt/PyQt4/PyQt-4.11.4/PyQt-mac-gpl-4.11.4.tar.gz"
   sha256 "f178ba12a814191df8e9f87fb95c11084a0addc827604f1a18a82944225ed918"
@@ -11,7 +11,7 @@ class Pyqt < Formula
     odie "pyqt: --with-python3 must be specified when using --without-python"
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   if build.with? "python3"
     depends_on "sip" => "with-python3"
@@ -53,7 +53,7 @@ class Pyqt < Formula
         cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
-          inreplace "pyqtconfig.py", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+          inreplace "pyqtconfig.py", Formula["cartr/qt4/qt4"].prefix, Formula["cartr/qt4/qt4"].opt_prefix
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
         end
       ensure
@@ -86,7 +86,7 @@ class Pyqt < Formula
       system python, "test.py"
     end
   end
-  
+
   bottle do
     root_url "https://dl.bintray.com/cartr/bottle-qt4"
     sha256 "9a24c78224b0b2c9d1ced22804dd3c01b82f9a35ce0a228aaa9db64c34376ef7" => :sierra

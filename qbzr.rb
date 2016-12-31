@@ -7,7 +7,7 @@ class Qbzr < Formula
   bottle :unneeded
 
   depends_on "bazaar"
-  depends_on "cartr/qt4/pyqt"
+  depends_on "cartr/qt4/pyqt4"
 
   def install
     (share/"bazaar/plugins/qbzr").install Dir["*"]
