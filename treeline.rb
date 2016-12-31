@@ -8,7 +8,7 @@ class Treeline < Formula
 
   depends_on :python3
   depends_on "sip" => "with-python3"
-  depends_on "cartr/qt4/pyqt" => "with-python3"
+  depends_on "cartr/qt4/pyqt4" => "with-python3"
 
   def install
     pyver = Language::Python.major_minor_version "python3"

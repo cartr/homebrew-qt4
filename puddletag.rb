@@ -8,7 +8,7 @@ class Puddletag < Formula
   head "https://github.com/keithgg/puddletag.git"
 
   depends_on :python if MacOS.version <= :snow_leopard
-  depends_on "cartr/qt4/pyqt"
+  depends_on "cartr/qt4/pyqt4"
   depends_on "chromaprint" => :recommended
 
   resource "pyparsing" do

@@ -8,7 +8,7 @@ class Shiboken < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   depends_on "cmake" => :build
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python", "Build without python 2 support"

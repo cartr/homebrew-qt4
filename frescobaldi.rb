@@ -13,7 +13,7 @@ class Frescobaldi < Formula
   # python-poppler-qt4 dependencies
   depends_on "pkg-config" => :build
   depends_on "poppler" => "with-qt"
-  depends_on "cartr/qt4/pyqt"
+  depends_on "cartr/qt4/pyqt4"
 
   resource "python-poppler-qt4" do
     url "https://github.com/wbsoft/python-poppler-qt4/archive/v0.24.0.tar.gz"

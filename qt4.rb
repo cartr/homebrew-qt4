@@ -1,10 +1,9 @@
-class Qt < Formula
+class Qt4 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 3
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 

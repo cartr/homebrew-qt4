@@ -6,7 +6,7 @@ class Valkyrie < Formula
 
   head "svn://svn.valgrind.org/valkyrie/trunk"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
   depends_on "valgrind"
 
   def install

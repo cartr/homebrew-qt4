@@ -6,7 +6,7 @@ class Sqliteman < Formula
 
   depends_on "cmake" => :build
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
   depends_on "qscintilla2"
 
   def install

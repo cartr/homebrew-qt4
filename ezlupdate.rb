@@ -6,7 +6,7 @@ class Ezlupdate < Formula
 
   head "https://github.com/ezsystems/ezpublish-legacy.git"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt4"
 
   def install
     cd "support/ezlupdate-qt4.5/ezlupdate" do
