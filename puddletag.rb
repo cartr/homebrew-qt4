@@ -7,6 +7,14 @@ class Puddletag < Formula
 
   head "https://github.com/keithgg/puddletag.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://homebrew.bintray.com/bottles"
+    sha256 "2f97b0687f8eacab3188d6e2ec595f267f862efed2701e51b39a2bf81bf508bb" => :el_capitan
+    sha256 "80ad92bbf1cdaaed786063b7fc2ef78e1b652a70efbc882e1fd2c5828e3d302d" => :yosemite
+    sha256 "52b3b94916fe4943df8962f63534093a7f9a9b7f6c5e0ed4869d23b51ccd908f" => :mavericks
+  end
+
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "cartr/qt4/pyqt"
   depends_on "chromaprint" => :recommended

@@ -8,6 +8,13 @@ class Pyside < Formula
 
   head "https://github.com/PySide/PySide.git"
 
+  bottle do
+    root_url "https://dl.bintray.com/cartr/bottle-qt4"
+    sha256 "09c72363702d64409a2a6d30a47dd4995c85819a9a49b8fcdb2f5e4fc02d3b47" => :sierra
+    sha256 "d1f7a38b75e85ebdbb73d15ecd4b2154b236c80a790f021c9f70f95bc839d926" => :el_capitan
+    sha256 "8c2463514cd2133b9237143ceb2d73e64f96ff162c5c302b28f894132ad88490" => :yosemite
+  end
+
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python", "Build without python 2 support"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
