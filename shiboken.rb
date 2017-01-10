@@ -7,6 +7,14 @@ class Shiboken < Formula
 
   head "https://github.com/PySide/Shiboken.git"
 
+  bottle do
+    rebuild 2
+    root_url "https://dl.bintray.com/cartr/bottle-qt4"
+    sha256 "07bc90641920429de9606160383f58ffae13efbc248f7704e014a57a34f3f04f" => :sierra
+    sha256 "70c2218fd33120644707710aca6cb12a68272b85afdc694a4a3fe28eb5135f8f" => :el_capitan
+    sha256 "f0f159f81858e514afd5cfc55f9c05a40ad5155baffc788974f4e632bfd97726" => :yosemite
+  end
+
   depends_on "cmake" => :build
   depends_on "cartr/qt4/qt"
 
