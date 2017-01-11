@@ -1,4 +1,6 @@
 {
   "qt": "qt@4",
-  "pyqt": "pyqt@4"
+  "pyqt": "pyqt@4",
+  "qt4": "qt@4",
+  "pyqt4": "pyqt@4"
 }
