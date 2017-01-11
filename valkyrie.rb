@@ -14,7 +14,7 @@ class Valkyrie < Formula
     sha256 "f06323976b965095fb5bfe1c637ed42d175cdd2b4d1dedde3252788ba61b4bfa" => :mavericks
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
   depends_on "valgrind"
 
   def install
