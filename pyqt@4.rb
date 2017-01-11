@@ -11,7 +11,7 @@ class PyqtAT4 < Formula
     odie "pyqt: --with-python3 must be specified when using --without-python"
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   if build.with? "python3"
     depends_on "sip" => "with-python3"
@@ -53,7 +53,7 @@ class PyqtAT4 < Formula
         cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
-          inreplace "pyqtconfig.py", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+          inreplace "pyqtconfig.py", Formula["cartr/qt4/qt@4"].prefix, Formula["cartr/qt4/qt@4"].opt_prefix
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
         end
       ensure

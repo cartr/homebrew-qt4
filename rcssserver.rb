@@ -44,7 +44,7 @@ class Rcssserver < Formula
   depends_on "flex" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   def install
     ENV.j1
