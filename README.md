@@ -4,7 +4,7 @@ This Homebrew tap allows you to install Qt4 (and various packages that depend on
 
     brew tap cartr/qt4
     brew tap-pin cartr/qt4
-    brew install qt
+    brew install qt@4
 
 Feel free to submit an issue or pull request if you run into any problems or have any suggestions for improvements to the packages.
 
