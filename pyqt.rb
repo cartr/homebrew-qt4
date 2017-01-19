@@ -53,7 +53,9 @@ class Pyqt < Formula
         cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
-          inreplace "pyqtconfig.py", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+          if Formula["cartr/qt4/qt"].prefix != Formula["cartr/qt4/qt"].opt_prefix
+            inreplace "pyqtconfig.py", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+          end
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
         end
       ensure
