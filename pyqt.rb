@@ -1,7 +1,7 @@
 class Pyqt < Formula
   desc "Python bindings for Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://downloads.sf.net/project/pyqt/PyQt4/PyQt-4.11.4/PyQt-mac-gpl-4.11.4.tar.gz"
+  url "https://downloads.sf.net/project/pyqt/PyQt4/PyQt-4.12/PyQt-mac-gpl-4.12.tar.gz"
   sha256 "f178ba12a814191df8e9f87fb95c11084a0addc827604f1a18a82944225ed918"
 
   option "without-python", "Build without python 2 support"
