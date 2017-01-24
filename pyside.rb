@@ -55,7 +55,8 @@ class Pyside < Formula
       end
     end
 
-    inreplace include/"PySide/pyside_global.h", Formula["cartr/qt4/qt"].prefix, Formula["cartr/qt4/qt"].opt_prefix
+    inreplace include/"PySide/pyside_global.h", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt"].name}/#{Formula["cartr/qt4/qt"].pkg_version}",
+       Formula["cartr/qt4/qt"].opt_prefix
   end
 
   test do
