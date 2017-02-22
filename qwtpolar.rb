@@ -16,7 +16,7 @@ class Qwtpolar < Formula
   option "without-plugin", "Skip building the Qt Designer plugin"
 
   depends_on "cartr/qt4/qt"
-  depends_on "qwt"
+  depends_on "cartr/qt4/qwt-qt4"
 
   # Update designer plugin linking back to qwtpolar framework/lib after install
   # See: https://sourceforge.net/p/qwtpolar/patches/2/
@@ -52,7 +52,7 @@ class Qwtpolar < Formula
       args << "macx-g++"
     end
 
-    ENV["QMAKEFEATURES"] = "#{Formula["qwt"].opt_prefix}/features"
+    ENV["QMAKEFEATURES"] = "#{Formula["cartr/qt4/qwt-qt4"].opt_prefix}/features"
     system "qmake", *args
     system "make"
     system "make", "install"
