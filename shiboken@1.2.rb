@@ -1,5 +1,5 @@
-class Shiboken < Formula
-  desc "GeneratorRunner plugin that outputs C++ code for CPython extensions"
+class ShibokenAT12 < Formula
+  desc "C++ GeneratorRunner plugin for CPython extensions"
   homepage "https://wiki.qt.io/PySide"
   url "https://download.qt.io/official_releases/pyside/shiboken-1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-shiboken/shiboken-1.2.2.tar.bz2"
@@ -8,11 +8,10 @@ class Shiboken < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   bottle do
-    rebuild 2
     root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "07bc90641920429de9606160383f58ffae13efbc248f7704e014a57a34f3f04f" => :sierra
-    sha256 "70c2218fd33120644707710aca6cb12a68272b85afdc694a4a3fe28eb5135f8f" => :el_capitan
-    sha256 "f0f159f81858e514afd5cfc55f9c05a40ad5155baffc788974f4e632bfd97726" => :yosemite
+    sha256 "71584344b25782198a432f4cd902ce8400cd9126e2e39c54387e713adc782069" => :sierra
+    sha256 "415b42720142450db2b52e80d707b375ce0d7da168285222cc0b2c27e0415c52" => :el_capitan
+    sha256 "d119f2d243fe7ffadde9821b3baa1385c3a5009b4dec36f0cee6cedb6d5c6442" => :yosemite
   end
 
   depends_on "cmake" => :build

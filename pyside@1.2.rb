@@ -1,18 +1,17 @@
-class Pyside < Formula
+class PysideAT12 < Formula
   desc "Python bindings for Qt"
   homepage "https://wiki.qt.io/PySide"
   url "https://download.qt.io/official_releases/pyside/pyside-qt4.8+1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-pyside/pyside-qt4.8+1.2.2.tar.bz2"
   sha256 "a1a9df746378efe52211f1a229f77571d1306fb72830bbf73f0d512ed9856ae1"
-  revision 1
 
   head "https://github.com/PySide/PySide.git"
 
   bottle do
     root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "09c72363702d64409a2a6d30a47dd4995c85819a9a49b8fcdb2f5e4fc02d3b47" => :sierra
-    sha256 "d1f7a38b75e85ebdbb73d15ecd4b2154b236c80a790f021c9f70f95bc839d926" => :el_capitan
-    sha256 "8c2463514cd2133b9237143ceb2d73e64f96ff162c5c302b28f894132ad88490" => :yosemite
+    sha256 "b239f0b448538cbd20929e3f123a24bd2110fb5ea32d04d76f43c8e04f34d8d5" => :sierra
+    sha256 "2dfd6a1c92af5baaab38348688fd4f439f85aea6122760caf435c58680ec3262" => :el_capitan
+    sha256 "8513a36f424c936bbc3a8fcd61e593072c6a49ca0af8e50eba8fa4985cb9fdf9" => :yosemite
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python
@@ -27,9 +26,9 @@ class Pyside < Formula
   depends_on "cartr/qt4/qt"
 
   if build.with? "python3"
-    depends_on "cartr/qt4/shiboken" => "with-python3"
+    depends_on "cartr/qt4/shiboken@1.2" => "with-python3"
   else
-    depends_on "cartr/qt4/shiboken"
+    depends_on "cartr/qt4/shiboken@1.2"
   end
 
   def install

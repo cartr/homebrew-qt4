@@ -1,14 +1,14 @@
-class Coin < Formula
+class CoinAT313 < Formula
   desc "Retained-mode toolkit for 3D graphics development"
   homepage "https://bitbucket.org/Coin3D/coin/wiki/Home"
   url "https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz"
   sha256 "583478c581317862aa03a19f14c527c3888478a06284b9a46a0155fa5886d417"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles"
-    sha256 "f0f93e3c4a2b485866c9ec3a18931da88e86119854073c4e1c54ce93847f7f08" => :el_capitan
-    sha256 "1b3e64aab7fe177f944b2ffcaccc3a068c992ebdd5f3047c15be513812797394" => :yosemite
-    sha256 "db9f40c702a1b6955f23582988dcefd5866fa4d06589e4e16ec50ec11e64e87d" => :mavericks
+    root_url "https://dl.bintray.com/cartr/bottle-qt4"
+    sha256 "323796851c0d3556b23eaaa1ba6400a49f3235d4c0bb52c356843d03b5352f18" => :sierra
+    sha256 "91cd3072b9034640aec2ba8058f9dbfb7160802c5a1ed1d4b91b01fa7dae7dda" => :el_capitan
+    sha256 "67f8f0d490afee4095a23fb36b3334947d25d41c8693d4bd8a612a0ccf6212cc" => :yosemite
   end
 
   option "without-soqt", "Build without SoQt"
