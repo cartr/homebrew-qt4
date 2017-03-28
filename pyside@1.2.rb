@@ -23,7 +23,7 @@ class PysideAT12 < Formula
 
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   if build.with? "python3"
     depends_on "cartr/qt4/shiboken@1.2" => "with-python3"
@@ -40,7 +40,7 @@ class PysideAT12 < Formula
       abi = `#{python} -c 'import sysconfig as sc; print(sc.get_config_var("SOABI"))'`.strip
       python_suffix = python == "python" ? "-python2.7" : ".#{abi}"
       mkdir "macbuild#{version}" do
-        qt = Formula["cartr/qt4/qt"].opt_prefix
+        qt = Formula["cartr/qt4/qt@4"].opt_prefix
         args = std_cmake_args + %W[
           -DSITE_PACKAGE=#{lib}/python#{version}/site-packages
           -DALTERNATIVE_QT_INCLUDE_DIR=#{qt}/include
@@ -54,8 +54,8 @@ class PysideAT12 < Formula
       end
     end
 
-    inreplace include/"PySide/pyside_global.h", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt"].name}/#{Formula["cartr/qt4/qt"].pkg_version}",
-       Formula["cartr/qt4/qt"].opt_prefix
+    inreplace include/"PySide/pyside_global.h", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt@4"].name}/#{Formula["cartr/qt4/qt@4"].pkg_version}",
+       Formula["cartr/qt4/qt@4"].opt_prefix
   end
 
   test do

@@ -15,7 +15,7 @@ class Qwtpolar < Formula
   option "with-examples", "Install source code for example apps"
   option "without-plugin", "Skip building the Qt Designer plugin"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qwt-qt4"
 
   # Update designer plugin linking back to qwtpolar framework/lib after install

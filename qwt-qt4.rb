@@ -7,7 +7,7 @@ class QwtQt4 < Formula
   option "with-qwtmathml", "Build the qwtmathml library"
   option "without-plugin", "Skip building the Qt Designer plugin"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   # Update designer plugin linking back to qwt framework/lib after install
   # See: https://sourceforge.net/p/qwt/patches/45/
@@ -65,10 +65,10 @@ class QwtQt4 < Formula
     EOS
     system ENV.cxx, "test.cpp", "-o", "out",
       "-framework", "qwt", "-framework", "QtCore",
-      "-F#{lib}", "-F#{Formula["cartr/qt4/qt"].opt_lib}",
+      "-F#{lib}", "-F#{Formula["cartr/qt4/qt@4"].opt_lib}",
       "-I#{lib}/qwt.framework/Headers",
-      "-I#{Formula["cartr/qt4/qt"].opt_lib}/QtCore.framework/Headers",
-      "-I#{Formula["cartr/qt4/qt"].opt_lib}/QtGui.framework/Headers"
+      "-I#{Formula["cartr/qt4/qt@4"].opt_lib}/QtCore.framework/Headers",
+      "-I#{Formula["cartr/qt4/qt@4"].opt_lib}/QtGui.framework/Headers"
     system "./out"
   end
 end

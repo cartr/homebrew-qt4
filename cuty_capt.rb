@@ -13,7 +13,7 @@ class CutyCapt < Formula
     sha256 "1a4110195ff9d3837ed86b0ec73cc515c420cf07aa08ed00f5d8b1d9cae49dc3" => :mavericks
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   def install
     system "qmake", "CONFIG-=app_bundle"
