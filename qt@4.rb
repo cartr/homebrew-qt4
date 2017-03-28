@@ -1,10 +1,9 @@
-class Qt < Formula
+class QtAT4 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 3
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -21,9 +20,7 @@ class Qt < Formula
     sha256 "0deb4cd107853b1cc0800e48bb36b3d5682dc4a2a29eb34a6d032ac4ffe32ec3"
   end
 
-  option "with-qt3support", "Build with deprecated Qt3Support module support"
   option "with-docs", "Build documentation"
-  option "without-webkit", "Build without QtWebKit module"
 
   depends_on "openssl"
   depends_on "dbus" => :optional
@@ -52,6 +49,8 @@ class Qt < Formula
       -nomake demos
       -nomake examples
       -cocoa
+      -no-webkit
+      -qt3support
     ]
 
     if ENV.compiler == :clang
@@ -84,12 +83,6 @@ class Qt < Formula
       args << "-dbus-linked"
     end
 
-    if build.with? "qt3support"
-      args << "-qt3support"
-    else
-      args << "-no-qt3support"
-    end
-
     args << "-nomake" << "docs" if build.without? "docs"
 
     if MacOS.prefer_64_bit?
@@ -97,8 +90,6 @@ class Qt < Formula
     else
       args << "-arch" << "x86"
     end
-
-    args << "-no-webkit" if build.without? "webkit"
 
     system "./configure", *args
     system "make"
@@ -108,8 +99,6 @@ class Qt < Formula
     # what are these anyway?
     (bin+"pixeltool.app").rmtree
     (bin+"qhelpconverter.app").rmtree
-    # remove porting file for non-humans
-    (prefix+"q3porting.xml").unlink if build.without? "qt3support"
 
     # Some config scripts will only find Qt in a "Frameworks" folder
     frameworks.install_symlink Dir["#{lib}/*.framework"]
@@ -120,7 +109,7 @@ class Qt < Formula
     Pathname.glob("#{lib}/*.framework/Headers") do |path|
       include.install_symlink path => path.parent.basename(".framework")
     end
-
+    
     # Make `HOMEBREW_PREFIX/lib/qt4/plugins` an additional plug-in search path
     # for Qt Designer to support formulae that provide Qt Designer plug-ins.
     system "/usr/libexec/PlistBuddy",
@@ -134,11 +123,10 @@ class Qt < Formula
     We agreed to the Qt opensource license for you.
     If this is unacceptable you should uninstall.
 
-    Qt Designer no longer picks up changes to the QT_PLUGIN_PATH environment
-    variable as it was tweaked to search for plug-ins provided by formulae in
-      #{HOMEBREW_PREFIX}/lib/qt4/plugins
-
     Phonon is not supported on macOS Sierra or with Xcode 8.
+    
+    Webkit is no longer included -- please use `brew install qt-webkit@2.3` to
+    install it.
     EOS
   end
 
