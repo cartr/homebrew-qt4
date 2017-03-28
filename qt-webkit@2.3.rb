@@ -7,7 +7,7 @@ class QtWebkitAT23 < Formula
   depends_on "cartr/qt4/qt@4"
 
   def install
-    ENV["QTDIR"] = Formula["cartr/qt4/qt-base@4"].opt_prefix
+    ENV["QTDIR"] = Formula["cartr/qt4/qt@4"].opt_prefix
     system "Tools/Scripts/build-webkit", "--qt", "--no-webkit2", "--no-video", "--install-headers=#{include}", "--install-libs=#{lib}", "--minimal"
     system "make", "-C", "WebKitBuild/Release", "install"
   end
