@@ -1,5 +1,5 @@
 class QtWebkitAT23 < Formula
-  desc "Qt port of WebKit (insecure, you shouldn't use it)"
+  desc "Qt port of WebKit (insecure, don't use for Web browsing)"
   homepage "https://trac.webkit.org/wiki/QtWebKit"
   url "https://download.kde.org/stable/qtwebkit-2.3/2.3.4/src/qtwebkit-2.3.4.tar.gz"
   sha256 "c6cfa9d068f7eb024fee3f6c24f5b8b726997f669007587f35ed4a97d40097ca"
@@ -14,8 +14,9 @@ class QtWebkitAT23 < Formula
 
   def caveats; <<-EOS.undent
     This is years old and really insecure. You shouldn't
-    use it, especially if you don't absolutely trust the
-    HTML files you're using it to browse.
+    use it if you don't absolutely trust the HTML files 
+    you're using it to browse. Definely avoid using it
+    in a general-purpose Web browser.
     
     Also, video doesn't work.
     EOS
