@@ -90,11 +90,30 @@ class QtAT4 < Formula
     else
       args << "-arch" << "x86"
     end
-
+    
     system "./configure", *args
     system "make"
     ENV.j1
     system "make", "install"
+    
+    # Delete qmake, as we'll be rebuilding it
+    system "rm", "bin/qmake"
+    system "rm", "#{bin}/qmake"
+    system "make", "clean"
+    
+    # Patch the configure script so the built qmake can find Webkit if installed
+    inreplace "configure", '=$QT_INSTALL_PREFIX"`', "=#{HOMEBREW_PREFIX}\"`"
+    inreplace "configure", '=$QT_INSTALL_DOCS"`', "=#{HOMEBREW_PREFIX}/doc\"`"
+    inreplace "configure", '=$QT_INSTALL_HEADERS"`', "=#{HOMEBREW_PREFIX}/include\"`"
+    inreplace "configure", '=$QT_INSTALL_LIBS"`', "=#{HOMEBREW_PREFIX}/lib\"`"
+    inreplace "configure", '=$QT_INSTALL_BINS"`', "=#{HOMEBREW_PREFIX}/bin\"`"
+    inreplace "configure", '=$QT_INSTALL_PLUGINS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/plugins\"`"
+    inreplace "configure", '=$QT_INSTALL_IMPORTS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/imports\"`"
+    inreplace "configure", '=$QT_INSTALL_SETTINGS"`', "=#{HOMEBREW_PREFIX}\"`"
+
+    # Run ./configure again, to rebuild qmake
+    system "./configure", *args
+    bin.install "bin/qmake"
 
     # what are these anyway?
     (bin+"pixeltool.app").rmtree
