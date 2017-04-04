@@ -24,6 +24,7 @@ class PysideAT12 < Formula
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
   depends_on "cartr/qt4/qt@4"
+  depends_on "cartr/qt4/qt-webkit@2.3"
 
   if build.with? "python3"
     depends_on "cartr/qt4/shiboken@1.2" => "with-python3"
@@ -43,7 +44,7 @@ class PysideAT12 < Formula
         qt = Formula["cartr/qt4/qt@4"].opt_prefix
         args = std_cmake_args + %W[
           -DSITE_PACKAGE=#{lib}/python#{version}/site-packages
-          -DALTERNATIVE_QT_INCLUDE_DIR=#{qt}/include
+          -DALTERNATIVE_QT_INCLUDE_DIR=#{HOMEBREW_PREFIX}/include
           -DQT_SRC_DIR=#{qt}/src
           -DPYTHON_SUFFIX=#{python_suffix}
         ]
@@ -53,9 +54,6 @@ class PysideAT12 < Formula
         system "make", "install"
       end
     end
-
-    inreplace include/"PySide/pyside_global.h", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt@4"].name}/#{Formula["cartr/qt4/qt@4"].pkg_version}",
-       Formula["cartr/qt4/qt@4"].opt_prefix
   end
 
   test do
