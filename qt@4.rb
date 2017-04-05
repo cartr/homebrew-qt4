@@ -144,8 +144,8 @@ class QtAT4 < Formula
 
     Phonon is not supported on macOS Sierra or with Xcode 8.
     
-    Webkit is no longer included -- please use `brew install qt-webkit@2.3` to
-    install it.
+    WebKit is no longer included for security reasons. If you absolutely
+    need it, it can be installed with `brew install qt-webkit@2.3`.
     EOS
   end
 
