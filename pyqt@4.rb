@@ -1,4 +1,4 @@
-class Pyqt < Formula
+class PyqtAT4 < Formula
   desc "Python bindings for Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
   url "https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.12/PyQt4_gpl_mac-4.12.tar.gz/download"
@@ -12,6 +12,7 @@ class Pyqt < Formula
   end
 
   depends_on "cartr/qt4/qt@4"
+  depends_on "cartr/qt4/qt-webkit@2.3" => :recommended
 
   if build.with? "python3"
     depends_on "sip" => "with-python3"
