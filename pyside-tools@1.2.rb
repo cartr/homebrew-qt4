@@ -9,10 +9,11 @@ class PysideToolsAT12 < Formula
 
   bottle do
     cellar :any
-    rebuild 1
+    rebuild 2
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "e8455fad485ac4cd5df83344afebe1ef64c02c10eb713f93ca248840570c7148" => :sierra
-    sha256 "145a6f69bd958a09b06675efe945ee7806b3c70814aceab522e66663709a1c56" => :el_capitan
+    sha256 "08e3186ed7c36de766daf475ca60146098a0858d66bedab77cd88c18ff07b80b" => :sierra
+    sha256 "96d0547e36fa48ddcc2f743909f0905b5aec03bd93bbde5409806aecc4a6c846" => :el_capitan
+    sha256 "0d1c0c79a35dd143732af7998a94bb57b8ffa871fef11c05ffbd54c72ff6ec82" => :yosemite
   end
 
   depends_on "cmake" => :build

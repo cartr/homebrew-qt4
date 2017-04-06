@@ -10,10 +10,11 @@ class ShibokenAT12 < Formula
 
   bottle do
     cellar :any
-    rebuild 1
+    rebuild 2
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "d0b084d539c8e75eade6facd5a691f383d3e7db0e4844e2c4ba9b37633bb08bf" => :sierra
-    sha256 "54da7a979b25fc0f29272c45f97fc5c9c793d4f282c9d190851ba42e3227726a" => :el_capitan
+    sha256 "4392a7a24506b1be9f640f1030cad073eb78877250de50ddcb237757cf9368cf" => :sierra
+    sha256 "c3d4a78614c8d094237c6c44219b682bb96cded90188e59e6aa53ab1be883c3c" => :el_capitan
+    sha256 "18fb05d0f912aa73acdccbc52a3fb4e74e86f8f905b0badd44149baaf72bb02e" => :yosemite
   end
 
   depends_on "cmake" => :build
