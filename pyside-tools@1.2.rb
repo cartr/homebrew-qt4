@@ -8,10 +8,11 @@ class PysideToolsAT12 < Formula
   head "https://github.com/PySide/Tools.git"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "a33526f4dfa462958cd9f193d7cb2b07890cb03f46a93c441010e54a9cbee061" => :sierra
-    sha256 "2817916ec605546f4b0da37e4642f1383f2194e688c19d562a6888b9cef42de5" => :el_capitan
-    sha256 "a9aeb98436fb100b7a2558aee7e08221a37a83cbe803e80149171c5d655a5208" => :yosemite
+    cellar :any
+    rebuild 1
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "e8455fad485ac4cd5df83344afebe1ef64c02c10eb713f93ca248840570c7148" => :sierra
+    sha256 "145a6f69bd958a09b06675efe945ee7806b3c70814aceab522e66663709a1c56" => :el_capitan
   end
 
   depends_on "cmake" => :build

@@ -9,10 +9,11 @@ class PysideAT12 < Formula
   head "https://github.com/PySide/PySide.git"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "b239f0b448538cbd20929e3f123a24bd2110fb5ea32d04d76f43c8e04f34d8d5" => :sierra
-    sha256 "2dfd6a1c92af5baaab38348688fd4f439f85aea6122760caf435c58680ec3262" => :el_capitan
-    sha256 "8513a36f424c936bbc3a8fcd61e593072c6a49ca0af8e50eba8fa4985cb9fdf9" => :yosemite
+    cellar :any
+    rebuild 1
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "0159a7e7a4894e5fcdfd6d2f93d375dfd71c0e57e85f8db6fd28d164b6a319d8" => :sierra
+    sha256 "43a85b908d73226ebac0955dc9182aad33d84e35a3d936f0ac70b91cd63936f0" => :el_capitan
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python

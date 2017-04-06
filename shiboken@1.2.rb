@@ -9,10 +9,11 @@ class ShibokenAT12 < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "71584344b25782198a432f4cd902ce8400cd9126e2e39c54387e713adc782069" => :sierra
-    sha256 "415b42720142450db2b52e80d707b375ce0d7da168285222cc0b2c27e0415c52" => :el_capitan
-    sha256 "d119f2d243fe7ffadde9821b3baa1385c3a5009b4dec36f0cee6cedb6d5c6442" => :yosemite
+    cellar :any
+    rebuild 1
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "d0b084d539c8e75eade6facd5a691f383d3e7db0e4844e2c4ba9b37633bb08bf" => :sierra
+    sha256 "54da7a979b25fc0f29272c45f97fc5c9c793d4f282c9d190851ba42e3227726a" => :el_capitan
   end
 
   depends_on "cmake" => :build
