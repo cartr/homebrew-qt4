@@ -15,6 +15,7 @@ class CutyCapt < Formula
   end
 
   depends_on "cartr/qt4/qt@4"
+  depends_on "cartr/qt4/qt-webkit@4"
 
   def install
     system "qmake", "CONFIG-=app_bundle"
