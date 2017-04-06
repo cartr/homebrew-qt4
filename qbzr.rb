@@ -3,11 +3,12 @@ class Qbzr < Formula
   homepage "https://launchpad.net/qbzr"
   url "https://launchpad.net/qbzr/0.23/0.23.1/+download/qbzr-0.23.1.tar.gz"
   sha256 "3211adef11c975dfbb6c80285651e2e6f3bfa99f1baa1a95371e8490ea8ff441"
+  revision 1
 
   bottle :unneeded
 
   depends_on "bazaar"
-  depends_on "cartr/qt4/pyqt"
+  depends_on "cartr/qt4/pyqt@4"
 
   def install
     (share/"bazaar/plugins/qbzr").install Dir["*"]

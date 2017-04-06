@@ -4,6 +4,7 @@ class ShibokenAT12 < Formula
   url "https://download.qt.io/official_releases/pyside/shiboken-1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-shiboken/shiboken-1.2.2.tar.bz2"
   sha256 "7625bbcf1fe313fd910c6b8c9cf49ac5495499f9d00867115a2f1f2a69fce5c4"
+  revision 1
 
   head "https://github.com/PySide/Shiboken.git"
 

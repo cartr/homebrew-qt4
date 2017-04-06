@@ -3,6 +3,7 @@ class Ezlupdate < Formula
   homepage "http://ezpedia.org/ez/ezlupdate"
   url "https://github.com/ezsystems/ezpublish-legacy/archive/v2015.01.3.tar.gz"
   sha256 "cb365cfad2f5036908dc60bbca599383fc2b61435682dacacdb7bf27ff427ce6"
+  revision 1
 
   head "https://github.com/ezsystems/ezpublish-legacy.git"
 

@@ -1,7 +1,7 @@
 class Rcssserver < Formula
   desc "Server for RoboCup Soccer Simulator"
   homepage "http://sserver.sourceforge.net/"
-  revision 3
+  revision 4
 
   stable do
     url "https://downloads.sourceforge.net/sserver/rcssserver/15.2.2/rcssserver-15.2.2.tar.gz"

@@ -3,6 +3,7 @@ class Libechonest < Formula
   homepage "https://projects.kde.org/projects/playground/libs/libechonest"
   url "http://files.lfranchi.com/libechonest-2.3.1.tar.bz2"
   sha256 "56756545fd1cb3d9067479f52215b6157c1ced2bc82b895e72fdcd9bebb47889"
+  revision 1
 
   bottle do
     cellar :any

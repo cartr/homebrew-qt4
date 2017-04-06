@@ -3,6 +3,7 @@ class Frescobaldi < Formula
   homepage "http://frescobaldi.org/"
   url "https://github.com/wbsoft/frescobaldi/releases/download/v2.19.0/frescobaldi-2.19.0.tar.gz"
   sha256 "b426bd53d54fdc4dfc16fcfbff957fdccfa319d6ac63614de81f6ada5044d3e6"
+  revision 1
 
   option "with-lilypond", "Install Lilypond from Homebrew/tex"
 
@@ -13,7 +14,7 @@ class Frescobaldi < Formula
   # python-poppler-qt4 dependencies
   depends_on "pkg-config" => :build
   depends_on "poppler" => "with-qt"
-  depends_on "cartr/qt4/pyqt"
+  depends_on "cartr/qt4/pyqt@4"
 
   resource "python-poppler-qt4" do
     url "https://github.com/wbsoft/python-poppler-qt4/archive/v0.24.0.tar.gz"
