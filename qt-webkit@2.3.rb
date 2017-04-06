@@ -25,6 +25,6 @@ class QtWebkitAT23 < Formula
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
     sha256 "6c5241ea53d8dd10484aac0c2eebcf332bfd8d19f529f35b3aa2797af9f38604" => :sierra
-    sha256 "501c24d6e1e5d5d5c85f1fff02d35c254bd52e24aa4331e7709ef722e6bf8d22" => :el_capitan
+    sha256 "2e8cb144a5e72513e92d1878da71ba3e93fc84b3630a65b7e34d9a9189b35c08" => :el_capitan
   end
 end
