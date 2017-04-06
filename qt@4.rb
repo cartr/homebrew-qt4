@@ -158,9 +158,9 @@ class QtAT4 < Formula
   end
   
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "5d7fcd5f7925ed4be7724aa2d1b8e14eef6e9cf786f362138e501c845ed0034f" => :sierra
-    sha256 "933b11d7efbaa066f5ab75ec56e5319e1422dec940d5035b4242e9766d0555f1" => :el_capitan
-    sha256 "63e5b332675a16fa7b13623dfa577cb49579d56b9fe43b2f8f04b0747a4ae80a" => :yosemite
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "3000fbb564470d6261ef934e6f62cc581bed4545f75de3bfe2eda064dd0ea078" => :sierra
+    sha256 "fef0442b1d41e0164c379ace975a76c7ecb1f9d97d7b3c511f74dff9a03c93d2" => :el_capitan
+    sha256 "8df1c3fdae7d50a3215c9f2b4affb62974ff17071abe3509d6e3260456e5d9b3" => :yosemite
   end
 end
