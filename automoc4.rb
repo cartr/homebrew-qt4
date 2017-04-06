@@ -3,6 +3,7 @@ class Automoc4 < Formula
   homepage "https://techbase.kde.org/Development/Tools/Automoc4"
   url "http://download.kde.org/stable/automoc4/0.9.88/automoc4-0.9.88.tar.bz2"
   sha256 "234116f4c05ae21d828594d652b4c4a052ef75727e2d8a4f3a4fb605de9e4c49"
+  revision 1
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
@@ -12,7 +13,7 @@ class Automoc4 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   # Patch needed to find Qt in Homebrew upstreamed but upstream version
   # does not apply. Won't be needed for next version.

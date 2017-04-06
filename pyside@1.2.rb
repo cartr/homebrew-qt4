@@ -4,6 +4,7 @@ class PysideAT12 < Formula
   url "https://download.qt.io/official_releases/pyside/pyside-qt4.8+1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-pyside/pyside-qt4.8+1.2.2.tar.bz2"
   sha256 "a1a9df746378efe52211f1a229f77571d1306fb72830bbf73f0d512ed9856ae1"
+  revision 1
 
   head "https://github.com/PySide/PySide.git"
 
@@ -23,7 +24,8 @@ class PysideAT12 < Formula
 
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
+  depends_on "cartr/qt4/qt-webkit@2.3"
 
   if build.with? "python3"
     depends_on "cartr/qt4/shiboken@1.2" => "with-python3"
@@ -40,10 +42,10 @@ class PysideAT12 < Formula
       abi = `#{python} -c 'import sysconfig as sc; print(sc.get_config_var("SOABI"))'`.strip
       python_suffix = python == "python" ? "-python2.7" : ".#{abi}"
       mkdir "macbuild#{version}" do
-        qt = Formula["cartr/qt4/qt"].opt_prefix
+        qt = Formula["cartr/qt4/qt@4"].opt_prefix
         args = std_cmake_args + %W[
           -DSITE_PACKAGE=#{lib}/python#{version}/site-packages
-          -DALTERNATIVE_QT_INCLUDE_DIR=#{qt}/include
+          -DALTERNATIVE_QT_INCLUDE_DIR=#{HOMEBREW_PREFIX}/include
           -DQT_SRC_DIR=#{qt}/src
           -DPYTHON_SUFFIX=#{python_suffix}
         ]
@@ -53,9 +55,6 @@ class PysideAT12 < Formula
         system "make", "install"
       end
     end
-
-    inreplace include/"PySide/pyside_global.h", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt"].name}/#{Formula["cartr/qt4/qt"].pkg_version}",
-       Formula["cartr/qt4/qt"].opt_prefix
   end
 
   test do

@@ -3,6 +3,7 @@ class Ezlupdate < Formula
   homepage "http://ezpedia.org/ez/ezlupdate"
   url "https://github.com/ezsystems/ezpublish-legacy/archive/v2015.01.3.tar.gz"
   sha256 "cb365cfad2f5036908dc60bbca599383fc2b61435682dacacdb7bf27ff427ce6"
+  revision 1
 
   head "https://github.com/ezsystems/ezpublish-legacy.git"
 
@@ -15,7 +16,7 @@ class Ezlupdate < Formula
     sha256 "4c09e545f0e9f011ed6d281a2eb3b53a5dfba04ddd4a5c6df2bc3628a285b8b5" => :mountain_lion
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   def install
     cd "support/ezlupdate-qt4.5/ezlupdate" do

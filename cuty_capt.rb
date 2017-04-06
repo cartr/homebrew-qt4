@@ -4,6 +4,7 @@ class CutyCapt < Formula
   url "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/c/cutycapt/cutycapt_0.0~svn6.orig.tar.gz"
   version "0.0.6"
   sha256 "cf85226a25731aff644f87a4e40b8878154667a6725a4dc0d648d7ec2d842264"
+  revision 1
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
@@ -13,7 +14,7 @@ class CutyCapt < Formula
     sha256 "1a4110195ff9d3837ed86b0ec73cc515c420cf07aa08ed00f5d8b1d9cae49dc3" => :mavericks
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   def install
     system "qmake", "CONFIG-=app_bundle"

@@ -1,7 +1,7 @@
 class Rcssserver < Formula
   desc "Server for RoboCup Soccer Simulator"
   homepage "http://sserver.sourceforge.net/"
-  revision 3
+  revision 4
 
   stable do
     url "https://downloads.sourceforge.net/sserver/rcssserver/15.2.2/rcssserver-15.2.2.tar.gz"
@@ -44,7 +44,7 @@ class Rcssserver < Formula
   depends_on "flex" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
 
   def install
     ENV.j1

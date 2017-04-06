@@ -2,5 +2,7 @@
   "shiboken"     : "shiboken@1.2",
   "pyside"       : "pyside@1.2",
   "pyside-tools" : "pyside-tools@1.2",
-  "coin"         : "coin@3.1.3"
+  "coin"         : "coin@3.1.3",
+  "qt"           : "qt-legacy-formula",
+  "pyqt"         : "pyqt@4"
 }

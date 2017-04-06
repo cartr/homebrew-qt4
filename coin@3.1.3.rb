@@ -3,6 +3,7 @@ class CoinAT313 < Formula
   homepage "https://bitbucket.org/Coin3D/coin/wiki/Home"
   url "https://bitbucket.org/Coin3D/coin/downloads/Coin-3.1.3.tar.gz"
   sha256 "583478c581317862aa03a19f14c527c3888478a06284b9a46a0155fa5886d417"
+  revision 1
 
   bottle do
     root_url "https://dl.bintray.com/cartr/bottle-qt4"
@@ -15,7 +16,7 @@ class CoinAT313 < Formula
 
   if build.with? "soqt"
     depends_on "pkg-config" => :build
-    depends_on "cartr/qt4/qt"
+    depends_on "cartr/qt4/qt@4"
   end
 
   resource "soqt" do

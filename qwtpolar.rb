@@ -3,6 +3,7 @@ class Qwtpolar < Formula
   homepage "http://qwtpolar.sourceforge.net/"
   url "https://downloads.sf.net/project/qwtpolar/qwtpolar/1.1.0/qwtpolar-1.1.0.tar.bz2"
   sha256 "e45a1019b481f52a63483c536c5ef3225f1cced04abf45d7d0ff8e06d30e2355"
+  revision 1
 
   bottle do
     cellar :any
@@ -15,7 +16,7 @@ class Qwtpolar < Formula
   option "with-examples", "Install source code for example apps"
   option "without-plugin", "Skip building the Qt Designer plugin"
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qwt-qt4"
 
   # Update designer plugin linking back to qwtpolar framework/lib after install

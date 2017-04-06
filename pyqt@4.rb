@@ -1,8 +1,9 @@
-class Pyqt < Formula
+class PyqtAT4 < Formula
   desc "Python bindings for Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
   url "https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.12/PyQt4_gpl_mac-4.12.tar.gz/download"
   sha256 "19d28b09bfcb384af8c596f3f76beabd0fe4c3a2a55cd35e62402b7c7cd6f660"
+  revision 1
 
   option "without-python", "Build without python 2 support"
   depends_on :python3 => :optional
@@ -11,7 +12,8 @@ class Pyqt < Formula
     odie "pyqt: --with-python3 must be specified when using --without-python"
   end
 
-  depends_on "cartr/qt4/qt"
+  depends_on "cartr/qt4/qt@4"
+  depends_on "cartr/qt4/qt-webkit@2.3" => :recommended
 
   if build.with? "python3"
     depends_on "sip" => "with-python3"
@@ -53,8 +55,8 @@ class Pyqt < Formula
         cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
-          inreplace "pyqtconfig.py", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt"].name}/#{Formula["cartr/qt4/qt"].pkg_version}",
-            Formula["cartr/qt4/qt"].opt_prefix
+          inreplace "pyqtconfig.py", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt@4"].name}/#{Formula["cartr/qt4/qt@4"].pkg_version}",
+            Formula["cartr/qt4/qt@4"].opt_prefix
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
         end
       ensure
