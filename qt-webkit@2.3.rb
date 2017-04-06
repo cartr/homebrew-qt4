@@ -23,9 +23,8 @@ class QtWebkitAT23 < Formula
   end
   
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "5d7fcd5f7925ed4be7724aa2d1b8e14eef6e9cf786f362138e501c845ed0034f" => :sierra
-    sha256 "933b11d7efbaa066f5ab75ec56e5319e1422dec940d5035b4242e9766d0555f1" => :el_capitan
-    sha256 "63e5b332675a16fa7b13623dfa577cb49579d56b9fe43b2f8f04b0747a4ae80a" => :yosemite
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "6c5241ea53d8dd10484aac0c2eebcf332bfd8d19f529f35b3aa2797af9f38604" => :sierra
+    sha256 "501c24d6e1e5d5d5c85f1fff02d35c254bd52e24aa4331e7709ef722e6bf8d22" => :el_capitan
   end
 end
