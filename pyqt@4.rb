@@ -91,8 +91,8 @@ class PyqtAT4 < Formula
   end
   
   bottle do
-    root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    rebuild 1
-    sha256 "cea56ddfe0e96dbf87d53aaffbd4a1fda8410646d11721a6555857bc36960e8a" => :sierra
+    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "e469b6a1064b23b5a429e391141cfc7e2ab06687cc1dd211cc249dd56020ade5" => :sierra
+    sha256 "5421fd941cc9436c56d2f3da486ad0373edb033f1419cc12a653f7df6b08fbcf" => :el_capitan
   end
 end
