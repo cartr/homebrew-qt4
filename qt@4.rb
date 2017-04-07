@@ -4,6 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
+  revision 1
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -38,6 +39,8 @@ class QtAT4 < Formula
   def install
     args = %W[
       -prefix #{prefix}
+      -plugindir #{prefix}/lib/qt4/plugins
+      -importdir #{prefix}/lib/qt4/imports
       -release
       -opensource
       -confirm-license
