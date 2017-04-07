@@ -4,6 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
+  revision 1
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -38,6 +39,8 @@ class QtAT4 < Formula
   def install
     args = %W[
       -prefix #{prefix}
+      -plugindir #{prefix}/lib/qt4/plugins
+      -importdir #{prefix}/lib/qt4/imports
       -release
       -opensource
       -confirm-license
@@ -159,8 +162,8 @@ class QtAT4 < Formula
   
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "3000fbb564470d6261ef934e6f62cc581bed4545f75de3bfe2eda064dd0ea078" => :sierra
-    sha256 "fef0442b1d41e0164c379ace975a76c7ecb1f9d97d7b3c511f74dff9a03c93d2" => :el_capitan
-    sha256 "8df1c3fdae7d50a3215c9f2b4affb62974ff17071abe3509d6e3260456e5d9b3" => :yosemite
+    sha256 "e63f386e4cc6f515238aa536d3b90c08746947725f87ad0e640d0fbdc5a97177" => :sierra
+    sha256 "cfb9cc212fe351155dc9a96f269d44190bd5c16accf3f019eed18352fe86f683" => :el_capitan
+    sha256 "d1fc9d950da28cf284510bc84b902f7e223bbbf09507f1f78e76bcb8a9065919" => :yosemite
   end
 end
