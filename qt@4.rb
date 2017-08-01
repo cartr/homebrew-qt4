@@ -21,6 +21,18 @@ class QtAT4 < Formula
     sha256 "0deb4cd107853b1cc0800e48bb36b3d5682dc4a2a29eb34a6d032ac4ffe32ec3"
   end
 
+  # Patch to fix build on macOS High Sierra
+  patch :p0 do
+    url "https://gist.githubusercontent.com/d235j/d47cf1d1fa226b5667348750f15fb0df/raw/e9910f4e351341faae3db14907b33e4da7b8bbe8/qt4_highsierra_1.patch"
+    sha256 "69713c9bcedace4c167273822da14247760c6dcff4949251af6a7b5f93bca9aa"
+  end
+
+  # Patch for stricter compiler restrictions on High Sierra
+  patch :p0 do
+    url "https://gist.githubusercontent.com/d235j/97e022342a4a462661b56465e76ff319/raw/19aa387580a3e8850a193b23fed8d4f7cb38299c/qt4_highsierra_2.patch"
+    sha256 "db68bf8397eb404c9620c6bb1ada5e98369420b1ea44f2da8c43c718814b5b3b"
+  end
+
   option "with-docs", "Build documentation"
 
   depends_on "openssl"
