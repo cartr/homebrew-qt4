@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 1
+  revision 2
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -20,7 +20,7 @@ class QtAT4 < Formula
     url "https://raw.githubusercontent.com/cartr/homebrew-qt4/41669527a2aac6aeb8a5eeb58f440d3f3498910a/patches/qsetting-nulls.patch"
     sha256 "0deb4cd107853b1cc0800e48bb36b3d5682dc4a2a29eb34a6d032ac4ffe32ec3"
   end
-
+  
   option "with-docs", "Build documentation"
 
   depends_on "openssl"
@@ -41,6 +41,7 @@ class QtAT4 < Formula
       -prefix #{prefix}
       -plugindir #{prefix}/lib/qt4/plugins
       -importdir #{prefix}/lib/qt4/imports
+      -datadir #{prefix}/etc/qt4
       -release
       -opensource
       -confirm-license
@@ -112,6 +113,7 @@ class QtAT4 < Formula
     inreplace "configure", '=$QT_INSTALL_BINS"`', "=#{HOMEBREW_PREFIX}/bin\"`"
     inreplace "configure", '=$QT_INSTALL_PLUGINS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/plugins\"`"
     inreplace "configure", '=$QT_INSTALL_IMPORTS"`', "=#{HOMEBREW_PREFIX}/lib/qt4/imports\"`"
+    inreplace "configure", '=$QT_INSTALL_DATA"`', "=#{HOMEBREW_PREFIX}/etc/qt4\"`"
     inreplace "configure", '=$QT_INSTALL_SETTINGS"`', "=#{HOMEBREW_PREFIX}\"`"
 
     # Run ./configure again, to rebuild qmake
@@ -162,8 +164,8 @@ class QtAT4 < Formula
   
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "e63f386e4cc6f515238aa536d3b90c08746947725f87ad0e640d0fbdc5a97177" => :sierra
-    sha256 "cfb9cc212fe351155dc9a96f269d44190bd5c16accf3f019eed18352fe86f683" => :el_capitan
-    sha256 "d1fc9d950da28cf284510bc84b902f7e223bbbf09507f1f78e76bcb8a9065919" => :yosemite
+    sha256 "3630a51e10e8a4d3d79a14e68c173a8b293e8d1431fbf2fecc56316aec592b76" => :sierra
+    sha256 "53595d29bceb3069fdbba1c81422fce677984dd44b4f34f0984842a6576b7dd6" => :el_capitan
+    sha256 "5b501c44e0e4b62226929ea20a7849feed2c764c98b7b19f8d155961e50a6cbf" => :yosemite
   end
 end
