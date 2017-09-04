@@ -33,6 +33,12 @@ class QtAT4 < Formula
     sha256 "db68bf8397eb404c9620c6bb1ada5e98369420b1ea44f2da8c43c718814b5b3b"
   end
   
+  # Patch to fix build on macOS Leopard
+  patch do
+    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/5f9f17222aaee1d6345e5979717905fe17aad7e9/patches/qt4-leopard-qfiledialog.patch"
+    sha256 "5b4cb76ae4277268bc0c8b44eef1702e69e2c0b3a658d95a85f5060662371bd2"
+  end
+  
   option "with-docs", "Build documentation"
 
   depends_on "openssl"
