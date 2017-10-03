@@ -176,6 +176,7 @@ class QtAT4 < Formula
   
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "e534bba997d3de5f2fab7e08b2c0375afc6594d9b791246b854381e4bd8ed7ce" => :high_sierra
     sha256 "3630a51e10e8a4d3d79a14e68c173a8b293e8d1431fbf2fecc56316aec592b76" => :sierra
     sha256 "53595d29bceb3069fdbba1c81422fce677984dd44b4f34f0984842a6576b7dd6" => :el_capitan
     sha256 "5b501c44e0e4b62226929ea20a7849feed2c764c98b7b19f8d155961e50a6cbf" => :yosemite
