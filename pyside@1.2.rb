@@ -11,6 +11,7 @@ class PysideAT12 < Formula
   bottle do
     cellar :any
     rebuild 2
+    sha256 "83f1da35b017aae67dfb0d414ea825b990c691c107c0a5f177f26252c15c684d" => :high_sierra
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
     sha256 "51be3a1fd82789dfee8afd5079e01685ac480cacb3c07f9cdb839f4a695488ac" => :sierra
     sha256 "84303e789040c6fce89d499cb42308fd4a1d0f4ef7b8b5b760bf196e8c3e272a" => :el_capitan
