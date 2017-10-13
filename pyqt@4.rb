@@ -68,6 +68,8 @@ class PyqtAT4 < Formula
         args << "--spec" << "unsupported/macx-clang-libc++"
       end
 
+      args << "--no-stubs"
+
       system python, "configure-ng.py", *args
       system "make"
       system "make", "install"
