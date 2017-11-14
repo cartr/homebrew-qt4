@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 2
+  revision 3
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -107,6 +107,10 @@ class QtAT4 < Formula
       args << "-arch" << "x86"
     end
     
+    # Patch macdeployqt so it finds the plugin path
+    inreplace "tools/macdeployqt/macdeployqt/main.cpp", '"/Developer/Applications/Qt/plugins"', "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
+    inreplace "tools/macdeployqt/macdeployqt/main.cpp", 'deploymentInfo.qtPath + "/plugins"', "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
+
     system "./configure", *args
     system "make"
     ENV.deparallelize
@@ -175,10 +179,10 @@ class QtAT4 < Formula
   end
   
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "e534bba997d3de5f2fab7e08b2c0375afc6594d9b791246b854381e4bd8ed7ce" => :high_sierra
-    sha256 "3630a51e10e8a4d3d79a14e68c173a8b293e8d1431fbf2fecc56316aec592b76" => :sierra
-    sha256 "53595d29bceb3069fdbba1c81422fce677984dd44b4f34f0984842a6576b7dd6" => :el_capitan
-    sha256 "5b501c44e0e4b62226929ea20a7849feed2c764c98b7b19f8d155961e50a6cbf" => :yosemite
+    root_url "https://dl.bintray.com/cartr/bottle-qt4"
+    sha256 "100dcdaef47f3bb016acbe1826b589cb23d7aeb8240edf0823887252bc217e1f" => :high_sierra
+    sha256 "0bd342b9415c9b8f732e851328dbb810a08b9b8769c141aef08f0b1cc176557b" => :sierra
+    sha256 "b4579d5863e77cf162518c6e95e9825225b90a914ff557c44cb07bab957ed3cb" => :el_capitan
+    sha256 "20397d4d7161fc50f2c6f8ceb70dca82e879e2e0462f5ec1bc99a30acc137684" => :yosemite
   end
 end
