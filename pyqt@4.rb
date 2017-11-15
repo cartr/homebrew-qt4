@@ -1,9 +1,8 @@
 class PyqtAT4 < Formula
   desc "Python bindings for Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.12/PyQt4_gpl_mac-4.12.tar.gz/download"
-  sha256 "19d28b09bfcb384af8c596f3f76beabd0fe4c3a2a55cd35e62402b7c7cd6f660"
-  revision 1
+  url "https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.12.1/PyQt4_gpl_mac-4.12.1.tar.gz/download"
+  sha256 "3224ab2c4d392891eb0abbc2bf076fef2ead3a5bb36ceae2383df4dda00ccce5"
 
   option "without-python", "Build without python 2 support"
   depends_on :python3 => :optional
@@ -93,9 +92,9 @@ class PyqtAT4 < Formula
   end
   
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "d4a7a45e310ba35210b58a8621abfcb7c7b1912833d5d9d413f5891d8d5a53bd" => :high_sierra
-    sha256 "e469b6a1064b23b5a429e391141cfc7e2ab06687cc1dd211cc249dd56020ade5" => :sierra
-    sha256 "5421fd941cc9436c56d2f3da486ad0373edb033f1419cc12a653f7df6b08fbcf" => :el_capitan
+    root_url "https://dl.bintray.com/cartr/bottle-qt4"
+    sha256 "d0d79ccc4f9cd980a16911486d6cdf0fae1fd569076c9798b88cb8a4360adfe4" => :high_sierra
+    sha256 "5700cae9bbfaee265ded504e679bb6869d26a3ce11b9356e0b732ee2135489c0" => :sierra
+    sha256 "630a15e5777ecd9d66f505ff0745b91bb5cc00321729bb9f5e65630c18e275fc" => :el_capitan
   end
 end
