@@ -7,7 +7,7 @@ class Treeline < Formula
 
   bottle :unneeded
 
-  depends_on :python3
+  depends_on "python3"
   depends_on "sip" => "with-python3"
   depends_on "cartr/qt4/pyqt@4" => "with-python3"
 

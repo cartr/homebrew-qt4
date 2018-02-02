@@ -21,7 +21,7 @@ class PysideAT12 < Formula
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python", "Build without python 2 support"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
-  depends_on :python3 => :optional
+  depends_on "python3" => :optional
 
   option "without-docs", "Skip building documentation"
 
