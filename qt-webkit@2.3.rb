@@ -18,7 +18,7 @@ class QtWebkitAT23 < Formula
     system "make", "-C", "WebKitBuild/Release", "install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     This is years old and really insecure. You shouldn't
     use it if you don't absolutely trust the HTML files 
     you're using it to browse. Definely avoid using it

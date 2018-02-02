@@ -42,7 +42,7 @@ class Frescobaldi < Formula
     bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     By default, a splash screen is shown on startup; this causes the main
     window not to show until the application icon on the dock is clicked
     (Cmd-Tab application switching does not appear to work).

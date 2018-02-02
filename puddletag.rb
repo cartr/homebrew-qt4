@@ -58,7 +58,7 @@ class Puddletag < Formula
   end
 
   test do
-    Pathname("test.py").write <<-EOS.undent
+    Pathname("test.py").write <<~EOS
       import puddlestuff
     EOS
 

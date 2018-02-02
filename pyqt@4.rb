@@ -81,7 +81,7 @@ class PyqtAT4 < Formula
   end
 
   test do
-    Pathname("test.py").write <<-EOS.undent
+    Pathname("test.py").write <<~EOS
       from PyQt4 import QtNetwork
       QtNetwork.QNetworkAccessManager().networkAccessible()
     EOS
