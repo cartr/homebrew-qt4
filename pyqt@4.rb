@@ -5,7 +5,7 @@ class PyqtAT4 < Formula
   sha256 "3224ab2c4d392891eb0abbc2bf076fef2ead3a5bb36ceae2383df4dda00ccce5"
 
   option "without-python", "Build without python 2 support"
-  depends_on :python3 => :optional
+  depends_on "python3" => :optional
 
   if build.without?("python3") && build.without?("python")
     odie "pyqt: --with-python3 must be specified when using --without-python"
@@ -81,7 +81,7 @@ class PyqtAT4 < Formula
   end
 
   test do
-    Pathname("test.py").write <<-EOS.undent
+    Pathname("test.py").write <<~EOS
       from PyQt4 import QtNetwork
       QtNetwork.QNetworkAccessManager().networkAccessible()
     EOS

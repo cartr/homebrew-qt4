@@ -159,7 +159,7 @@ class QtAT4 < Formula
     Pathname.glob("#{bin}/*.app") { |app| mv app, prefix }
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     We agreed to the Qt opensource license for you.
     If this is unacceptable you should uninstall.
 

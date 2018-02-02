@@ -10,7 +10,7 @@ class QtLegacyFormula < Formula
   deprecated_option "without-webkit" => "without-qt-webkit@2.3"
 
   def install
-    opoo <<-EOS.undent
+    opoo <<~EOS
     At the request of Homebrew maintainers, the Qt 4 formula has been
     renamed from `qt` to `qt@4`. You may need to re-run qmake/cmake and
     recompile any software that uses Qt 4.

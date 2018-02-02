@@ -14,7 +14,7 @@ class Qbzr < Formula
     (share/"bazaar/plugins/qbzr").install Dir["*"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS
     In order to use this plugin you must set your PYTHONPATH in your ~/.bashrc:
     export PYTHONPATH="#{HOMEBREW_PREFIX}/lib/python2.7/site-packages:$PYTHONPATH"
   EOS

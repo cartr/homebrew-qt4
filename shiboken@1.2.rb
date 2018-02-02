@@ -24,7 +24,7 @@ class ShibokenAT12 < Formula
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python", "Build without python 2 support"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
-  depends_on :python3 => :optional
+  depends_on "python3" => :optional
 
   def install
     # As of 1.1.1 the install fails unless you do an out of tree build and put

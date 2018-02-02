@@ -26,7 +26,7 @@ class Libechonest < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<~EOS
       #include <echonest/Genre.h>
       #include <echonest/Artist.h>
       int main() {
