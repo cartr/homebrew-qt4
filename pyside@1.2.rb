@@ -4,7 +4,7 @@ class PysideAT12 < Formula
   url "https://download.qt.io/official_releases/pyside/pyside-qt4.8+1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-pyside/pyside-qt4.8+1.2.2.tar.bz2"
   sha256 "a1a9df746378efe52211f1a229f77571d1306fb72830bbf73f0d512ed9856ae1"
-  revision 1
+  revision 2
 
   head "https://github.com/PySide/PySide.git"
 
@@ -19,9 +19,9 @@ class PysideAT12 < Formula
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python
-  option "without-python", "Build without python 2 support"
-  depends_on :python => :recommended if MacOS.version <= :snow_leopard
-  depends_on "python3" => :optional
+  option "without-python@2", "Build without python 2 support"
+  depends_on "python@2" => :recommended if MacOS.version <= :snow_leopard
+  depends_on "python" => :optional
 
   option "without-docs", "Skip building documentation"
 
@@ -30,8 +30,8 @@ class PysideAT12 < Formula
   depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qt-webkit@2.3"
 
-  if build.with? "python3"
-    depends_on "cartr/qt4/shiboken@1.2" => "with-python3"
+  if build.with? "python"
+    depends_on "cartr/qt4/shiboken@1.2" => "with-python"
   else
     depends_on "cartr/qt4/shiboken@1.2"
   end
@@ -43,7 +43,7 @@ class PysideAT12 < Formula
     # out of tree build in shiboken.rb.
     Language::Python.each_python(build) do |python, version|
       abi = `#{python} -c 'import sysconfig as sc; print(sc.get_config_var("SOABI"))'`.strip
-      python_suffix = python == "python" ? "-python2.7" : ".#{abi}"
+      python_suffix = python == "python2.7" ? "-python2.7" : ".#{abi}"
       mkdir "macbuild#{version}" do
         qt = Formula["cartr/qt4/qt@4"].opt_prefix
         args = std_cmake_args + %W[

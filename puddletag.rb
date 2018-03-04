@@ -3,7 +3,7 @@ class Puddletag < Formula
   homepage "http://puddletag.sf.net"
   url "https://github.com/keithgg/puddletag/archive/1.1.1.tar.gz"
   sha256 "550680abf9c2cf082861dfb3b61fd308f87f9ed304065582cddadcc8bdd947cc"
-  revision 3
+  revision 4
 
   head "https://github.com/keithgg/puddletag.git"
 
@@ -15,7 +15,7 @@ class Puddletag < Formula
     sha256 "52b3b94916fe4943df8962f63534093a7f9a9b7f6c5e0ed4869d23b51ccd908f" => :mavericks
   end
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "cartr/qt4/pyqt@4"
   depends_on "chromaprint" => :recommended
 

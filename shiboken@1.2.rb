@@ -4,7 +4,7 @@ class ShibokenAT12 < Formula
   url "https://download.qt.io/official_releases/pyside/shiboken-1.2.2.tar.bz2"
   mirror "https://distfiles.macports.org/py-shiboken/shiboken-1.2.2.tar.bz2"
   sha256 "7625bbcf1fe313fd910c6b8c9cf49ac5495499f9d00867115a2f1f2a69fce5c4"
-  revision 1
+  revision 2
 
   head "https://github.com/PySide/Shiboken.git"
 
@@ -22,9 +22,9 @@ class ShibokenAT12 < Formula
   depends_on "cartr/qt4/qt@4"
 
   # don't use depends_on :python because then bottles install Homebrew's python
-  option "without-python", "Build without python 2 support"
-  depends_on :python => :recommended if MacOS.version <= :snow_leopard
-  depends_on "python3" => :optional
+  option "without-python@2", "Build without python 2 support"
+  depends_on "python@2" => :recommended if MacOS.version <= :snow_leopard
+  depends_on "python" => :optional
 
   def install
     # As of 1.1.1 the install fails unless you do an out of tree build and put
@@ -34,8 +34,8 @@ class ShibokenAT12 < Formula
         args = std_cmake_args
         # Building the tests also runs them.
         args << "-DBUILD_TESTS=ON"
-        if python == "python3" && Formula["python3"].installed?
-          python_framework = Formula["python3"].opt_prefix/"Frameworks/Python.framework/Versions/#{version}"
+        if python == "python3" && Formula["python"].installed?
+          python_framework = Formula["python"].opt_prefix/"Frameworks/Python.framework/Versions/#{version}"
           args << "-DPYTHON3_INCLUDE_DIR:PATH=#{python_framework}/Headers"
           args << "-DPYTHON3_LIBRARY:FILEPATH=#{python_framework}/lib/libpython#{version}.dylib"
         end

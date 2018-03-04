@@ -3,19 +3,20 @@ class PyqtAT4 < Formula
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
   url "https://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.12.1/PyQt4_gpl_mac-4.12.1.tar.gz/download"
   sha256 "3224ab2c4d392891eb0abbc2bf076fef2ead3a5bb36ceae2383df4dda00ccce5"
+  revision 1
 
-  option "without-python", "Build without python 2 support"
-  depends_on "python3" => :optional
+  option "without-python@2", "Build without python 2 support"
+  depends_on "python" => :optional
 
-  if build.without?("python3") && build.without?("python")
-    odie "pyqt: --with-python3 must be specified when using --without-python"
+  if build.without?("python") && build.without?("python@2")
+    odie "pyqt: --with-python must be specified when using --without-python@2"
   end
 
   depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qt-webkit@2.3" => :recommended
 
-  if build.with? "python3"
-    depends_on "sip" => "with-python3"
+  if build.with? "python"
+    depends_on "sip" => "with-python"
   else
     depends_on "sip"
   end
