@@ -3,11 +3,11 @@ class Frescobaldi < Formula
   homepage "http://frescobaldi.org/"
   url "https://github.com/wbsoft/frescobaldi/releases/download/v2.19.0/frescobaldi-2.19.0.tar.gz"
   sha256 "b426bd53d54fdc4dfc16fcfbff957fdccfa319d6ac63614de81f6ada5044d3e6"
-  revision 1
+  revision 2
 
   option "with-lilypond", "Install Lilypond from Homebrew/tex"
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "portmidi" => :optional
   depends_on "homebrew/tex/lilypond" => :optional
 
