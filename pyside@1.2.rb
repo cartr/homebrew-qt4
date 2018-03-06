@@ -10,12 +10,11 @@ class PysideAT12 < Formula
 
   bottle do
     cellar :any
-    rebuild 2
-    sha256 "83f1da35b017aae67dfb0d414ea825b990c691c107c0a5f177f26252c15c684d" => :high_sierra
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "51be3a1fd82789dfee8afd5079e01685ac480cacb3c07f9cdb839f4a695488ac" => :sierra
-    sha256 "84303e789040c6fce89d499cb42308fd4a1d0f4ef7b8b5b760bf196e8c3e272a" => :el_capitan
-    sha256 "ef5894f1769a3ca2e2c8b69eb8a8fc62daa0baf107e26d43a9bc3077394c14fc" => :yosemite
+    sha256 "ef6d157776c0b19e05cd80ae3f505b0c1406cc650138157245a90c5c91e4ef39" => :high_sierra
+    sha256 "de86f87d7137c5bf6489611996e50fd89e7ba26433a5af63e74f7d77bf761774" => :sierra
+    sha256 "6c4b01a7d8d5c79cb10852800ee960ff2949ad6b905498d9f95c0ac089be9f13" => :el_capitan
+    sha256 "b1d4935c8dddea6104c3f849657540f4829b2b83f377850225aef68a3dfc484b" => :yosemite
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python
