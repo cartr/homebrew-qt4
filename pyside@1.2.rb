@@ -1,20 +1,19 @@
 class PysideAT12 < Formula
   desc "Python bindings for Qt"
   homepage "https://wiki.qt.io/PySide"
-  url "https://download.qt.io/official_releases/pyside/pyside-qt4.8+1.2.2.tar.bz2"
-  mirror "https://distfiles.macports.org/py-pyside/pyside-qt4.8+1.2.2.tar.bz2"
-  sha256 "a1a9df746378efe52211f1a229f77571d1306fb72830bbf73f0d512ed9856ae1"
-  revision 2
+  url "https://codeload.github.com/pyside/PySide/tar.gz/1.2.4"
+  mirror "https://distfiles.macports.org/py-pyside/PySide-1.2.4.tar.gz"
+  sha256 "90f2d736e2192ac69e5a2ac798fce2b5f7bf179269daa2ec262986d488c3b0f7"
 
   head "https://github.com/PySide/PySide.git"
 
   bottle do
     cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "ef6d157776c0b19e05cd80ae3f505b0c1406cc650138157245a90c5c91e4ef39" => :high_sierra
-    sha256 "de86f87d7137c5bf6489611996e50fd89e7ba26433a5af63e74f7d77bf761774" => :sierra
-    sha256 "6c4b01a7d8d5c79cb10852800ee960ff2949ad6b905498d9f95c0ac089be9f13" => :el_capitan
-    sha256 "b1d4935c8dddea6104c3f849657540f4829b2b83f377850225aef68a3dfc484b" => :yosemite
+    sha256 "fae1f0246101547c9646f3bcee32c21ae006530398c812a97496c13c6ffa12ec" => :high_sierra
+    sha256 "b905f9edacee0b937c7873b6e53815121776b3c9c4a6baa21522dce94fa2675f" => :sierra
+    sha256 "98861a66bf700f7c38b44471b933062a285bcbdd238e17499a8beb50545115f1" => :el_capitan
+    sha256 "c3016b818ac01bb8e93164e398dc3dfb645a99932741d8508e6369972f32c1cf" => :yosemite
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python

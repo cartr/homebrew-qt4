@@ -1,20 +1,19 @@
 class ShibokenAT12 < Formula
   desc "C++ GeneratorRunner plugin for CPython extensions"
   homepage "https://wiki.qt.io/PySide"
-  url "https://download.qt.io/official_releases/pyside/shiboken-1.2.2.tar.bz2"
-  mirror "https://distfiles.macports.org/py-shiboken/shiboken-1.2.2.tar.bz2"
-  sha256 "7625bbcf1fe313fd910c6b8c9cf49ac5495499f9d00867115a2f1f2a69fce5c4"
-  revision 2
+  url "https://codeload.github.com/pyside/Shiboken/tar.gz/1.2.4"
+  mirror "https://distfiles.macports.org/py-shiboken/Shiboken-1.2.4.tar.gz"
+  sha256 "1536f73a3353296d97a25e24f9554edf3e6a48126886f8d21282c3645ecb96a4"
 
   head "https://github.com/PySide/Shiboken.git"
 
   bottle do
     cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "dc505b7f9571ec2ca8f81bf335b3e45066e24069e29a68c45c8966a6698bd44e" => :high_sierra
-    sha256 "0b1ab8320d7ff126e323aec0bed3a8d388daad0986159bc69fcf04fcfb84694e" => :sierra
-    sha256 "ce7187223847c8becf32edb0bf462cfe40c90b69a68336f2f338d461c5645ac1" => :el_capitan
-    sha256 "cc2533d0f3393e429468d75663d0f4a92dcaba4912b0b9aa85212a3d89b9a36b" => :yosemite
+    sha256 "9fc153a21d3cabf6c7a996c0147b8341dafc5c631b43cb1a085ecf2dbee4ce25" => :high_sierra
+    sha256 "f886aa8e05466368ab49d7396250f5ea08ee1ece1f2285470b4bb4789042e893" => :sierra
+    sha256 "a81c6f85b893e75b34c624d82519c0ead1b537320922064f71fb8a841d4d8d6b" => :el_capitan
+    sha256 "e7fcd71f74a0018ee43463323248042e8bfdafd927b303ce00a53d88846cfac4" => :yosemite
   end
 
   depends_on "cmake" => :build
