@@ -1,10 +1,9 @@
 class PysideAT12 < Formula
   desc "Python bindings for Qt"
   homepage "https://wiki.qt.io/PySide"
-  url "https://download.qt.io/official_releases/pyside/pyside-qt4.8+1.2.2.tar.bz2"
-  mirror "https://distfiles.macports.org/py-pyside/pyside-qt4.8+1.2.2.tar.bz2"
-  sha256 "a1a9df746378efe52211f1a229f77571d1306fb72830bbf73f0d512ed9856ae1"
-  revision 2
+  url "https://codeload.github.com/pyside/PySide/tar.gz/1.2.4"
+  mirror "https://distfiles.macports.org/py-pyside/PySide-1.2.4.tar.gz"
+  sha256 "90f2d736e2192ac69e5a2ac798fce2b5f7bf179269daa2ec262986d488c3b0f7"
 
   head "https://github.com/PySide/PySide.git"
 

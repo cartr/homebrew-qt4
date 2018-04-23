@@ -1,10 +1,9 @@
 class ShibokenAT12 < Formula
   desc "C++ GeneratorRunner plugin for CPython extensions"
   homepage "https://wiki.qt.io/PySide"
-  url "https://download.qt.io/official_releases/pyside/shiboken-1.2.2.tar.bz2"
-  mirror "https://distfiles.macports.org/py-shiboken/shiboken-1.2.2.tar.bz2"
-  sha256 "7625bbcf1fe313fd910c6b8c9cf49ac5495499f9d00867115a2f1f2a69fce5c4"
-  revision 2
+  url "https://codeload.github.com/pyside/Shiboken/tar.gz/1.2.4"
+  mirror "https://distfiles.macports.org/py-shiboken/Shiboken-1.2.4.tar.gz"
+  sha256 "1536f73a3353296d97a25e24f9554edf3e6a48126886f8d21282c3645ecb96a4"
 
   head "https://github.com/PySide/Shiboken.git"
 
