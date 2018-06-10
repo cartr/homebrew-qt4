@@ -32,7 +32,13 @@ class QtAT4 < Formula
     url "https://raw.githubusercontent.com/cartr/homebrew-qt4/c957b2d755c762b77142e35f68cddd7f0986bc7b/patches/linguist-findmessage-null-check.patch"
     sha256 "db68bf8397eb404c9620c6bb1ada5e98369420b1ea44f2da8c43c718814b5b3b"
   end
-  
+
+  # Patch for QFixed compiler issue in QCoreTextFontEngine
+  patch :p1 do
+    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/22a6e328b6d911b3c1cedcaadb2882dda728f8a7/patches/qfixed.patch"
+    sha256 "4ca3df71470f755917bc903dfee0b6a6e1d2788322b9d71d810b3bb80b3f8c8a"
+  end
+
   option "with-docs", "Build documentation"
 
   depends_on "openssl"
