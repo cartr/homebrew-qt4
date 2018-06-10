@@ -8,11 +8,25 @@ class QtAT4 < Formula
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
-  # Backport of Qt5 commit to fix the fatal build error with Xcode 7, SDK 10.11.
-  # https://code.qt.io/cgit/qt/qtbase.git/commit/?id=b06304e164ba47351fa292662c1e6383c081b5ca
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch"
-    sha256 "c8a0fa819c8012a7cb70e902abb7133fc05235881ce230235d93719c47650c4e"
+  if MacOS.version >= :snow_leopard
+    # Backport of Qt5 commit to fix the fatal build error with Xcode 7, SDK 10.11.
+    # https://code.qt.io/cgit/qt/qtbase.git/commit/?id=b06304e164ba47351fa292662c1e6383c081b5ca
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/480b7142c4e2ae07de6028f672695eb927a34875/qt/el-capitan.patch"
+      sha256 "c8a0fa819c8012a7cb70e902abb7133fc05235881ce230235d93719c47650c4e"
+    end
+  else
+    # Patch to fix build on macOS Leopard
+    patch do
+      url "https://raw.githubusercontent.com/cartr/homebrew-qt4/5f9f17222aaee1d6345e5979717905fe17aad7e9/patches/qt4-leopard-qfiledialog.patch"
+      sha256 "5b4cb76ae4277268bc0c8b44eef1702e69e2c0b3a658d95a85f5060662371bd2"
+    end
+
+    # Patch to fix build on macOS Tiger
+    patch do
+      url "https://raw.githubusercontent.com/cartr/homebrew-qt4/9c34a20a60932b0bf25052252af780806d4ec4c1/patches/qt4-tiger.patch"
+      sha256 "bc96f5c2a36a9a216bf85fb0e922b19f249fb006482bd27095281da79ee50a4c"
+    end
   end
   
   # Backport of Qt5 patch to fix an issue with null bytes in QSetting strings.
