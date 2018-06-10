@@ -34,7 +34,7 @@ class QtAT4 < Formula
   end
 
   # Patch for QFixed compiler issue in QCoreTextFontEngine
-  patch :p0 do
+  patch :p1 do
     url "https://raw.githubusercontent.com/cartr/homebrew-qt4/22a6e328b6d911b3c1cedcaadb2882dda728f8a7/patches/qfixed.patch"
     sha256 "4ca3df71470f755917bc903dfee0b6a6e1d2788322b9d71d810b3bb80b3f8c8a"
   end
