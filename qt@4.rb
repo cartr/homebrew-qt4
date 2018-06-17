@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://www.mirrorservice.org/sites/download.qt-project.org/official_releases/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 4
+  revision 5
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -41,8 +41,8 @@ class QtAT4 < Formula
 
   # Patch for spurious QObject warnings
   patch :p1 do
-    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/4683896e3c3123346fc0a5a7f4a9e73d7a96d6a9/patches/qobject-spurious-warnings.patch"
-    sha256 "c8f74571bf1270a9f43c8d0f2ecd110b1cec7fa63350794a77889c080621e39c"
+    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/b7bc7818aa11c809209032554a990b1cef7edacc/patches/qobject-spurious-warnings.patch"
+    sha256 "5e81df9a1c35a5aec21241a82707ad6ac198b2e44928389722b64da341260c5d"
   end
 
   option "with-docs", "Build documentation"
