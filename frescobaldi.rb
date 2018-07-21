@@ -3,17 +3,14 @@ class Frescobaldi < Formula
   homepage "http://frescobaldi.org/"
   url "https://github.com/wbsoft/frescobaldi/releases/download/v2.19.0/frescobaldi-2.19.0.tar.gz"
   sha256 "b426bd53d54fdc4dfc16fcfbff957fdccfa319d6ac63614de81f6ada5044d3e6"
-  revision 2
-
-  option "with-lilypond", "Install Lilypond from Homebrew/tex"
+  revision 3
 
   depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "portmidi" => :optional
-  depends_on "homebrew/tex/lilypond" => :optional
 
   # python-poppler-qt4 dependencies
   depends_on "pkg-config" => :build
-  depends_on "poppler" => "with-qt"
+  depends_on "cartr/qt4/poppler-qt4" => "with-qt@4"
   depends_on "cartr/qt4/pyqt@4"
 
   resource "python-poppler-qt4" do
@@ -28,8 +25,12 @@ class Frescobaldi < Formula
 
   def install
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+
     %w[python-poppler-qt4 python-ly].each do |r|
       resource(r).stage do
+        if r == "python-poppler-qt4"
+          inreplace "types.sip", "PyList_SET_ITEM", "PyList_SetItem"
+        end
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
