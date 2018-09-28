@@ -61,6 +61,19 @@ class QtAT4 < Formula
   end
 
   def install
+    if MacOS.sdk_path_if_needed
+      # Qt attempts to build with a 10.4 deployment target, even though
+      # we use libc++ which is only available in 10.9+. This used to not fail
+      # (although I'm unsure if the resulting binary would've worked on 10.4)
+      # but it's now completely broken because Xcode10/Mojave moved all the
+      # headers around.
+      inreplace "configure", "MACOSX_DEPLOYMENT_TARGET 10.4", "MACOSX_DEPLOYMENT_TARGET 10.9"
+      inreplace "src/tools/bootstrap/bootstrap.pro", "MACOSX_DEPLOYMENT_TARGET = 10.4", "MACOSX_DEPLOYMENT_TARGET = 10.9"
+      inreplace "mkspecs/common/mac.conf", "MACOSX_DEPLOYMENT_TARGET = 10.4", "MACOSX_DEPLOYMENT_TARGET = 10.9"
+      inreplace "qmake/qmake.pri", "MACOSX_DEPLOYMENT_TARGET = 10.4", "MACOSX_DEPLOYMENT_TARGET = 10.9"
+      inreplace "mkspecs/unsupported/macx-clang-libc++/qmake.conf", "MACOSX_DEPLOYMENT_TARGET = 10.7", "MACOSX_DEPLOYMENT_TARGET = 10.9"
+    end
+
     args = %W[
       -prefix #{prefix}
       -plugindir #{prefix}/lib/qt4/plugins
