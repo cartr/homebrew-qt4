@@ -6,12 +6,6 @@ class CutyCapt < Formula
   sha256 "cf85226a25731aff644f87a4e40b8878154667a6725a4dc0d648d7ec2d842264"
   revision 1
 
-  bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "hashhere" => :sierra
-    sha256 "hashhere" => :el_capitan
-  end
-
   depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qt-webkit@2.3"
 

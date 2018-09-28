@@ -10,6 +10,7 @@ class ShibokenAT12 < Formula
   bottle do
     cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "9ee4301c0fb346c05db64e1b83575dd5f545f5e6a5995d93c24bac1128209914" => :mojave
     sha256 "9fc153a21d3cabf6c7a996c0147b8341dafc5c631b43cb1a085ecf2dbee4ce25" => :high_sierra
     sha256 "f886aa8e05466368ab49d7396250f5ea08ee1ece1f2285470b4bb4789042e893" => :sierra
     sha256 "a81c6f85b893e75b34c624d82519c0ead1b537320922064f71fb8a841d4d8d6b" => :el_capitan
