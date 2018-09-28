@@ -10,6 +10,7 @@ class PysideAT12 < Formula
   bottle do
     cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    sha256 "c3a85d2ad28306550cc8e844ad53edd9b7756e6643f8b80b2231354c8e016f35" => :mojave
     sha256 "fae1f0246101547c9646f3bcee32c21ae006530398c812a97496c13c6ffa12ec" => :high_sierra
     sha256 "b905f9edacee0b937c7873b6e53815121776b3c9c4a6baa21522dce94fa2675f" => :sierra
     sha256 "98861a66bf700f7c38b44471b933062a285bcbdd238e17499a8beb50545115f1" => :el_capitan
