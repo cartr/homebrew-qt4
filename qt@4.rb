@@ -126,11 +126,7 @@ class QtAT4 < Formula
 
     args << "-nomake" << "docs" if build.without? "docs"
 
-    if MacOS.prefer_64_bit?
-      args << "-arch" << "x86_64"
-    else
-      args << "-arch" << "x86"
-    end
+    args << "-arch" << "x86_64"
     
     # Patch macdeployqt so it finds the plugin path
     inreplace "tools/macdeployqt/macdeployqt/main.cpp", '"/Developer/Applications/Qt/plugins"', "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
