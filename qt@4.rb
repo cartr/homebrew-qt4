@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 5
+  revision 6
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -47,7 +47,7 @@ class QtAT4 < Formula
 
   option "with-docs", "Build documentation"
 
-  depends_on "openssl"
+  depends_on "openssl@1.0"
   depends_on "dbus" => :optional
   depends_on "mysql" => :optional
   depends_on "postgresql" => :optional
@@ -109,8 +109,8 @@ class QtAT4 < Formula
     args << "-no-phonon" if MacOS.version >= :sierra || MacOS::Xcode.version >= "8.0"
 
     args << "-openssl-linked"
-    args << "-I" << Formula["openssl"].opt_include
-    args << "-L" << Formula["openssl"].opt_lib
+    args << "-I" << Formula["openssl@1.0"].opt_include
+    args << "-L" << Formula["openssl@1.0"].opt_lib
 
     args << "-plugin-sql-mysql" if build.with? "mysql"
     args << "-plugin-sql-psql" if build.with? "postgresql"
