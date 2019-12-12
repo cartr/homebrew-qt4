@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 5
+  revision 6
 
   head "https://code.qt.io/qt/qt.git", :branch => "4.8"
 
@@ -43,6 +43,12 @@ class QtAT4 < Formula
   patch :p1 do
     url "https://raw.githubusercontent.com/cartr/homebrew-qt4/b7bc7818aa11c809209032554a990b1cef7edacc/patches/qobject-spurious-warnings.patch"
     sha256 "5e81df9a1c35a5aec21241a82707ad6ac198b2e44928389722b64da341260c5d"
+  end
+
+  # Patch for openSSL 1.1 support
+  patch :p1 do
+    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/3f0c511388ce9ac87966dbec8da246c060ce2b42/patches/qt4-openssl111.patch"
+    sha256 "e6173ea681fd407a0ff088162ba94274aa08b6f526d809b10ff4a52bb96e93e3"
   end
 
   option "with-docs", "Build documentation"
@@ -201,10 +207,5 @@ class QtAT4 < Formula
   
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "953fb1a4d035039a109079aa01e15bf1fc002060d2d7fe14540542efb5665d9e" => :mojave
-    sha256 "a36630189041fd5938fba4590927756877cf6534612588cbb7952994490a38b3" => :high_sierra
-    sha256 "e0079a2e7d06ef88eadfffb4c96eaa1e08697f5792df42d973b5e52058d8b15d" => :sierra
-    sha256 "5515a907c5de5561176112baa4333161964d9bb40d2ed1f9c5e49257f5a0b7ac" => :el_capitan
-    sha256 "d62234507074af1305d2b29bb0b8eecc0c4e8f03c02b505a37cee1d5f3cfc0a2" => :yosemite
   end
 end
