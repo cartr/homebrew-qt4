@@ -8,7 +8,7 @@ class OpensslAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "761954cfa03c91cec4db6dd210927b5bd52d7e1b73bfcca473a39c5856ae13c1" => :mojave
+    sha256 "faa8d3dc06601237a6f42a93ec6d8b0229426f01ea109e3fab691ac1cf9fd681" => :mojave
     sha256 "6d2269e690b2ddc182fa1148bb44e25b1172b6516caefad709158e736da94b46" => :high_sierra
   end
 
