@@ -24,7 +24,7 @@ class PopplerQt4 < Formula
   depends_on "little-cms2" => :optional
 
   conflicts_with "pdftohtml", "pdf2image", "xpdf",
-    :because => "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
+    because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 
   resource "font-data" do
     url "https://poppler.freedesktop.org/poppler-data-0.4.8.tar.gz"
@@ -44,16 +44,16 @@ class PopplerQt4 < Formula
       -DENABLE_QT5=OFF
     ]
 
-    if build.with? "qt@4"
-      args << "-DENABLE_QT4=ON"
+    args << if build.with? "qt@4"
+      "-DENABLE_QT4=ON"
     else
-      args << "-DENABLE_QT4=OFF"
+      "-DENABLE_QT4=OFF"
     end
 
-    if build.with? "little-cms2"
-      args << "-DENABLE_CMS=lcms2"
+    args << if build.with? "little-cms2"
+      "-DENABLE_CMS=lcms2"
     else
-      args << "-DENABLE_CMS=OFF"
+      "-DENABLE_CMS=OFF"
     end
 
     system "cmake", ".", *args

@@ -8,20 +8,20 @@ class ShibokenAT12 < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   bottle do
-    cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "9ee4301c0fb346c05db64e1b83575dd5f545f5e6a5995d93c24bac1128209914" => :mojave
-    sha256 "9fc153a21d3cabf6c7a996c0147b8341dafc5c631b43cb1a085ecf2dbee4ce25" => :high_sierra
-    sha256 "f886aa8e05466368ab49d7396250f5ea08ee1ece1f2285470b4bb4789042e893" => :sierra
-    sha256 "a81c6f85b893e75b34c624d82519c0ead1b537320922064f71fb8a841d4d8d6b" => :el_capitan
-    sha256 "e7fcd71f74a0018ee43463323248042e8bfdafd927b303ce00a53d88846cfac4" => :yosemite
+    sha256 cellar: :any, mojave:      "9ee4301c0fb346c05db64e1b83575dd5f545f5e6a5995d93c24bac1128209914"
+    sha256 cellar: :any, high_sierra: "9fc153a21d3cabf6c7a996c0147b8341dafc5c631b43cb1a085ecf2dbee4ce25"
+    sha256 cellar: :any, sierra:      "f886aa8e05466368ab49d7396250f5ea08ee1ece1f2285470b4bb4789042e893"
+    sha256 cellar: :any, el_capitan:  "a81c6f85b893e75b34c624d82519c0ead1b537320922064f71fb8a841d4d8d6b"
+    sha256 cellar: :any, yosemite:    "e7fcd71f74a0018ee43463323248042e8bfdafd927b303ce00a53d88846cfac4"
   end
+
+  option "without-python@2", "Build without python 2 support"
 
   depends_on "cmake" => :build
   depends_on "cartr/qt4/qt@4"
 
   # don't use depends_on :python because then bottles install Homebrew's python
-  option "without-python@2", "Build without python 2 support"
   depends_on "python@2" => :recommended if MacOS.version <= :snow_leopard
   depends_on "python" => :optional
 

@@ -7,9 +7,9 @@ class Automoc4 < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
-    sha256 "3f9efbccd2e54425aefa23beb359a84790a702fbc83e7950a709b3a56c818898" => :el_capitan
-    sha256 "db251dc1e60d49c6ba011c28cf4d08f82468af379195c66fc5e7777b6e9fc4fd" => :yosemite
-    sha256 "86fc5bddf7faf6f2897fc626903f0d927c8c9094e41c3d238c4b3e718acf4f47" => :mavericks
+    sha256 el_capitan: "3f9efbccd2e54425aefa23beb359a84790a702fbc83e7950a709b3a56c818898"
+    sha256 yosemite:   "db251dc1e60d49c6ba011c28cf4d08f82468af379195c66fc5e7777b6e9fc4fd"
+    sha256 mavericks:  "86fc5bddf7faf6f2897fc626903f0d927c8c9094e41c3d238c4b3e718acf4f47"
   end
 
   depends_on "cmake" => :build

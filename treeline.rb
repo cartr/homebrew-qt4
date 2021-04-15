@@ -7,9 +7,9 @@ class Treeline < Formula
 
   bottle :unneeded
 
+  depends_on "cartr/qt4/pyqt@4" => "with-python"
   depends_on "python"
   depends_on "sip" => "with-python"
-  depends_on "cartr/qt4/pyqt@4" => "with-python"
 
   def install
     pyver = Language::Python.major_minor_version "python3"
@@ -20,7 +20,7 @@ class Treeline < Formula
 
     system "./install.py", "-p#{libexec}"
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do

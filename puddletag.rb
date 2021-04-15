@@ -1,6 +1,6 @@
 class Puddletag < Formula
-  desc "Powerful, simple, audio tag editor."
-  homepage "http://puddletag.sf.net"
+  desc "Powerful, simple, audio tag editor"
+  homepage "https://puddletag.sourceforge.io/"
   url "https://github.com/keithgg/puddletag/archive/1.1.1.tar.gz"
   sha256 "550680abf9c2cf082861dfb3b61fd308f87f9ed304065582cddadcc8bdd947cc"
   revision 4
@@ -8,15 +8,14 @@ class Puddletag < Formula
   head "https://github.com/keithgg/puddletag.git"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://homebrew.bintray.com/bottles"
-    sha256 "2f97b0687f8eacab3188d6e2ec595f267f862efed2701e51b39a2bf81bf508bb" => :el_capitan
-    sha256 "80ad92bbf1cdaaed786063b7fc2ef78e1b652a70efbc882e1fd2c5828e3d302d" => :yosemite
-    sha256 "52b3b94916fe4943df8962f63534093a7f9a9b7f6c5e0ed4869d23b51ccd908f" => :mavericks
+    sha256 cellar: :any_skip_relocation, el_capitan: "2f97b0687f8eacab3188d6e2ec595f267f862efed2701e51b39a2bf81bf508bb"
+    sha256 cellar: :any_skip_relocation, yosemite:   "80ad92bbf1cdaaed786063b7fc2ef78e1b652a70efbc882e1fd2c5828e3d302d"
+    sha256 cellar: :any_skip_relocation, mavericks:  "52b3b94916fe4943df8962f63534093a7f9a9b7f6c5e0ed4869d23b51ccd908f"
   end
 
-  depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "cartr/qt4/pyqt@4"
+  depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "chromaprint" => :recommended
 
   resource "pyparsing" do
@@ -50,7 +49,7 @@ class Puddletag < Formula
     ENV.prepend_create_path "PYTHONPATH", HOMEBREW_PREFIX/"lib/python2.7/site-packages"
 
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", :PATH => "#{HOMEBREW_PREFIX}/bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", PATH: "#{HOMEBREW_PREFIX}/bin", PYTHONPATH: ENV["PYTHONPATH"])
 
     system "sh", "create_macos_app_bundle.sh", "--name", "Puddletag",
                  "--icon", "puddletag.png", "--script", "#{bin}/puddletag"

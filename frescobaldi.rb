@@ -5,13 +5,13 @@ class Frescobaldi < Formula
   sha256 "b426bd53d54fdc4dfc16fcfbff957fdccfa319d6ac63614de81f6ada5044d3e6"
   revision 3
 
+  depends_on "pkg-config" => :build
+  depends_on "cartr/qt4/poppler-qt4" => "with-qt@4"
+  depends_on "cartr/qt4/pyqt@4"
   depends_on "python@2" if MacOS.version <= :snow_leopard
   depends_on "portmidi" => :optional
 
   # python-poppler-qt4 dependencies
-  depends_on "pkg-config" => :build
-  depends_on "cartr/qt4/poppler-qt4" => "with-qt@4"
-  depends_on "cartr/qt4/pyqt@4"
 
   resource "python-poppler-qt4" do
     url "https://github.com/wbsoft/python-poppler-qt4/archive/v0.24.0.tar.gz"
@@ -28,9 +28,7 @@ class Frescobaldi < Formula
 
     %w[python-poppler-qt4 python-ly].each do |r|
       resource(r).stage do
-        if r == "python-poppler-qt4"
-          inreplace "types.sip", "PyList_SET_ITEM", "PyList_SetItem"
-        end
+        inreplace "types.sip", "PyList_SET_ITEM", "PyList_SetItem" if r == "python-poppler-qt4"
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
@@ -40,18 +38,19 @@ class Frescobaldi < Formula
     system "python", *Language::Python.setup_install_args(libexec)
 
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
-  def caveats; <<~EOS
-    By default, a splash screen is shown on startup; this causes the main
-    window not to show until the application icon on the dock is clicked
-    (Cmd-Tab application switching does not appear to work).
+  def caveats
+    <<~EOS
+      By default, a splash screen is shown on startup; this causes the main
+      window not to show until the application icon on the dock is clicked
+      (Cmd-Tab application switching does not appear to work).
 
-    You may want to disable the splash screen in the preferences to
-    solve this issue. See:
-      https://github.com/wbsoft/frescobaldi/issues/428
-  EOS
+      You may want to disable the splash screen in the preferences to
+      solve this issue. See:
+        https://github.com/wbsoft/frescobaldi/issues/428
+    EOS
   end
 
   test do

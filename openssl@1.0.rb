@@ -8,8 +8,8 @@ class OpensslAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "faa8d3dc06601237a6f42a93ec6d8b0229426f01ea109e3fab691ac1cf9fd681" => :mojave
-    sha256 "6d2269e690b2ddc182fa1148bb44e25b1172b6516caefad709158e736da94b46" => :high_sierra
+    sha256 mojave:      "faa8d3dc06601237a6f42a93ec6d8b0229426f01ea109e3fab691ac1cf9fd681"
+    sha256 high_sierra: "6d2269e690b2ddc182fa1148bb44e25b1172b6516caefad709158e736da94b46"
   end
 
   keg_only :provided_by_macos,
@@ -68,14 +68,15 @@ class OpensslAT10 < Formula
     (openssldir/"cert.pem").atomic_write(valid_certs.join("\n") << "\n")
   end
 
-  def caveats; <<~EOS
-    A CA file has been bootstrapped using certificates from the SystemRoots
-    keychain. To add additional certificates (e.g. the certificates added in
-    the System keychain), place .pem files in
-      #{openssldir}/certs
-    and run
-      #{opt_bin}/c_rehash
-  EOS
+  def caveats
+    <<~EOS
+      A CA file has been bootstrapped using certificates from the SystemRoots
+      keychain. To add additional certificates (e.g. the certificates added in
+      the System keychain), place .pem files in
+        #{openssldir}/certs
+      and run
+        #{opt_bin}/c_rehash
+    EOS
   end
 
   test do

@@ -7,9 +7,9 @@ class CoinAT313 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/cartr/bottle-qt4"
-    sha256 "323796851c0d3556b23eaaa1ba6400a49f3235d4c0bb52c356843d03b5352f18" => :sierra
-    sha256 "91cd3072b9034640aec2ba8058f9dbfb7160802c5a1ed1d4b91b01fa7dae7dda" => :el_capitan
-    sha256 "67f8f0d490afee4095a23fb36b3334947d25d41c8693d4bd8a612a0ccf6212cc" => :yosemite
+    sha256 sierra:     "323796851c0d3556b23eaaa1ba6400a49f3235d4c0bb52c356843d03b5352f18"
+    sha256 el_capitan: "91cd3072b9034640aec2ba8058f9dbfb7160802c5a1ed1d4b91b01fa7dae7dda"
+    sha256 yosemite:   "67f8f0d490afee4095a23fb36b3334947d25d41c8693d4bd8a612a0ccf6212cc"
   end
 
   option "without-soqt", "Build without SoQt"

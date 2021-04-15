@@ -7,9 +7,9 @@ class Sqliteman < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
-    sha256 "58aa529353dad48607eb46064df44aadea49887eb20d0df01f46452a48e48689" => :el_capitan
-    sha256 "872ac20b5090d3f91ca3cb3c518e1d318876dc5d616c1fe1e49afafa1e601c58" => :yosemite
-    sha256 "69313b1b3a7d480ab6ce4b3b544c8f0c1ea1b7128a834a82a98be97dc0344a9a" => :mavericks
+    sha256 el_capitan: "58aa529353dad48607eb46064df44aadea49887eb20d0df01f46452a48e48689"
+    sha256 yosemite:   "872ac20b5090d3f91ca3cb3c518e1d318876dc5d616c1fe1e49afafa1e601c58"
+    sha256 mavericks:  "69313b1b3a7d480ab6ce4b3b544c8f0c1ea1b7128a834a82a98be97dc0344a9a"
   end
 
   depends_on "cmake" => :build

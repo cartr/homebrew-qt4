@@ -8,26 +8,23 @@ class PysideAT12 < Formula
   head "https://github.com/PySide/PySide.git"
 
   bottle do
-    cellar :any
     root_url "https://dl.bintray.com/cartr/autobottle-qt4"
-    sha256 "c3a85d2ad28306550cc8e844ad53edd9b7756e6643f8b80b2231354c8e016f35" => :mojave
-    sha256 "fae1f0246101547c9646f3bcee32c21ae006530398c812a97496c13c6ffa12ec" => :high_sierra
-    sha256 "b905f9edacee0b937c7873b6e53815121776b3c9c4a6baa21522dce94fa2675f" => :sierra
-    sha256 "98861a66bf700f7c38b44471b933062a285bcbdd238e17499a8beb50545115f1" => :el_capitan
-    sha256 "c3016b818ac01bb8e93164e398dc3dfb645a99932741d8508e6369972f32c1cf" => :yosemite
+    sha256 cellar: :any, mojave:      "c3a85d2ad28306550cc8e844ad53edd9b7756e6643f8b80b2231354c8e016f35"
+    sha256 cellar: :any, high_sierra: "fae1f0246101547c9646f3bcee32c21ae006530398c812a97496c13c6ffa12ec"
+    sha256 cellar: :any, sierra:      "b905f9edacee0b937c7873b6e53815121776b3c9c4a6baa21522dce94fa2675f"
+    sha256 cellar: :any, el_capitan:  "98861a66bf700f7c38b44471b933062a285bcbdd238e17499a8beb50545115f1"
+    sha256 cellar: :any, yosemite:    "c3016b818ac01bb8e93164e398dc3dfb645a99932741d8508e6369972f32c1cf"
   end
 
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python@2", "Build without python 2 support"
-  depends_on "python@2" => :recommended if MacOS.version <= :snow_leopard
-  depends_on "python" => :optional
-
   option "without-docs", "Skip building documentation"
-
   depends_on "cmake" => :build
   depends_on "sphinx-doc" => :build if build.with? "docs"
-  depends_on "cartr/qt4/qt@4"
   depends_on "cartr/qt4/qt-webkit@2.3"
+  depends_on "cartr/qt4/qt@4"
+  depends_on "python@2" => :recommended if MacOS.version <= :snow_leopard
+  depends_on "python" => :optional
 
   if build.with? "python"
     depends_on "cartr/qt4/shiboken@1.2" => "with-python"

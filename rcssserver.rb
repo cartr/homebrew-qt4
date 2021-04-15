@@ -1,6 +1,6 @@
 class Rcssserver < Formula
   desc "Server for RoboCup Soccer Simulator"
-  homepage "http://sserver.sourceforge.net/"
+  homepage "https://sserver.sourceforge.io/"
   revision 4
 
   stable do
@@ -20,9 +20,9 @@ class Rcssserver < Formula
 
   bottle do
     root_url "https://homebrew.bintray.com/bottles"
-    sha256 "c38e5393d6d4c9074d2c70da05e0be9f61bc2f935848a3e2061a93f2b002e9af" => :el_capitan
-    sha256 "d7db1cd2a729f558cbb3569e1c858f9de8b6ced18b8eaf110b8db53881ad8c84" => :yosemite
-    sha256 "053199b5e554e73a385ffd7de6ef8bf9e04b1c3876e6fed0b9ca1c98066364a1" => :mavericks
+    sha256 el_capitan: "c38e5393d6d4c9074d2c70da05e0be9f61bc2f935848a3e2061a93f2b002e9af"
+    sha256 yosemite:   "d7db1cd2a729f558cbb3569e1c858f9de8b6ced18b8eaf110b8db53881ad8c84"
+    sha256 mavericks:  "053199b5e554e73a385ffd7de6ef8bf9e04b1c3876e6fed0b9ca1c98066364a1"
   end
 
   head do

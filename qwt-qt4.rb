@@ -1,6 +1,6 @@
 class QwtQt4 < Formula
   desc "Qt Widgets for Technical Applications (qt4 version)"
-  homepage "http://qwt.sourceforge.net/"
+  homepage "https://qwt.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/qwt/qwt/6.1.3/qwt-6.1.3.tar.bz2"
   sha256 "f3ecd34e72a9a2b08422fb6c8e909ca76f4ce5fa77acad7a2883b701f4309733"
   revision 1
@@ -16,8 +16,8 @@ class QwtQt4 < Formula
 
   def install
     inreplace "qwtconfig.pri" do |s|
-      s.gsub! /^\s*QWT_INSTALL_PREFIX\s*=(.*)$/, "QWT_INSTALL_PREFIX=#{prefix}"
-      s.sub! /\+(=\s*QwtDesigner)/, "-\\1" if build.without? "plugin"
+      s.gsub!(/^\s*QWT_INSTALL_PREFIX\s*=(.*)$/, "QWT_INSTALL_PREFIX=#{prefix}")
+      s.sub!(/\+(=\s*QwtDesigner)/, "-\\1") if build.without? "plugin"
 
       # Install Qt plugin in `lib/qt4/plugins/designer`, not `plugins/designer`.
       s.sub! %r{(= \$\$\{QWT_INSTALL_PREFIX\})/(plugins/designer)$},
@@ -26,10 +26,10 @@ class QwtQt4 < Formula
 
     args = ["-config", "release", "-spec"]
     # On Mavericks we want to target libc++, this requires a unsupported/macx-clang-libc++ flag
-    if ENV.compiler == :clang && MacOS.version >= :mavericks
-      args << "unsupported/macx-clang-libc++"
+    args << if ENV.compiler == :clang && MacOS.version >= :mavericks
+      "unsupported/macx-clang-libc++"
     else
-      args << "macx-g++"
+      "macx-g++"
     end
 
     if build.with? "qwtmathml"
