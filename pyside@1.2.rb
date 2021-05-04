@@ -8,7 +8,7 @@ class PysideAT12 < Formula
   head "https://github.com/PySide/PySide.git"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 cellar: :any, mojave:      "c3a85d2ad28306550cc8e844ad53edd9b7756e6643f8b80b2231354c8e016f35"
     sha256 cellar: :any, high_sierra: "fae1f0246101547c9646f3bcee32c21ae006530398c812a97496c13c6ffa12ec"
     sha256 cellar: :any, sierra:      "b905f9edacee0b937c7873b6e53815121776b3c9c4a6baa21522dce94fa2675f"

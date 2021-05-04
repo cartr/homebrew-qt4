@@ -9,7 +9,7 @@ class PysideToolsAT12 < Formula
 
   bottle do
     rebuild 2
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 cellar: :any, mojave:      "6eda5d9dc88477e751efb4d0985074e1163bfe42e48805f1f4a689b01fb230cf"
     sha256 cellar: :any, high_sierra: "ce1705c26ff37f14d9e2c8d89de2a1cd8d1285434fc762bc5f3473152d2b5664"
     sha256 cellar: :any, sierra:      "08e3186ed7c36de766daf475ca60146098a0858d66bedab77cd88c18ff07b80b"

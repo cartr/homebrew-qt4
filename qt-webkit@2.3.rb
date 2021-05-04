@@ -6,7 +6,7 @@ class QtWebkitAT23 < Formula
   revision 1
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 mojave:      "773ffe1a0c26ab27824bed4d1d5fa55655ca0f454cc938585d122ae000fd21ff"
     sha256 high_sierra: "5dd5a1c9a191e9d2c4245cad33db18044fcb501f9af3128916827eba44282ebb"
     sha256 sierra:      "e01b4ee5cc9abc69bebf01f104ea9d74f3af840160d977e6d81f80d5b8bf5e4f"

@@ -7,7 +7,7 @@ class PyqtAT4 < Formula
 
   bottle do
     rebuild 1
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 mojave:      "e44d7923a06753626ffc9bf6736b9641eb2b653bbd6ea34c841e1aaf2b9aadae"
     sha256 high_sierra: "5c6d1faf80702fbf842192da0823615a933b4e6198824cf923c2ad52da5c598c"
     sha256 sierra:      "60e060eea471ae89cad6c16c14f4c7d3ad300840de3a4694259166ce91b377f2"
