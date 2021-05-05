@@ -7,7 +7,7 @@ class OpensslAT10 < Formula
   sha256 "14cb464efe7ac6b54799b34456bd69558a749a4931ecfd9cf9f71d7881cac7bc"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 mojave:      "faa8d3dc06601237a6f42a93ec6d8b0229426f01ea109e3fab691ac1cf9fd681"
     sha256 high_sierra: "6d2269e690b2ddc182fa1148bb44e25b1172b6516caefad709158e736da94b46"
   end

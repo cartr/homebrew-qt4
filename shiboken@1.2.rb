@@ -8,7 +8,7 @@ class ShibokenAT12 < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 cellar: :any, mojave:      "9ee4301c0fb346c05db64e1b83575dd5f545f5e6a5995d93c24bac1128209914"
     sha256 cellar: :any, high_sierra: "9fc153a21d3cabf6c7a996c0147b8341dafc5c631b43cb1a085ecf2dbee4ce25"
     sha256 cellar: :any, sierra:      "f886aa8e05466368ab49d7396250f5ea08ee1ece1f2285470b4bb4789042e893"

@@ -11,7 +11,7 @@ class QtAT4 < Formula
   # Backport of Qt5 commit to fix the fatal build error with Xcode 7, SDK 10.11.
   # https://code.qt.io/cgit/qt/qtbase.git/commit/?id=b06304e164ba47351fa292662c1e6383c081b5ca
   bottle do
-    root_url "https://dl.bintray.com/cartr/autobottle-qt4"
+    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
     sha256 mojave:      "6c66adaf110ce3534d7ced855b51ae744e0a4750f4daaff635928e7476183c35"
     sha256 high_sierra: "2049444b31e01a2690f3d19663a6ec8b9c28e19741af24f936796431450767fb"
   end
