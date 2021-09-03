@@ -148,6 +148,9 @@ class QtAT4 < Formula
     inreplace "tools/macdeployqt/macdeployqt/main.cpp", 'deploymentInfo.qtPath + "/plugins"',
 "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
 
+    # Patch to fix build on macOS Big Sur
+    system "mv src/3rdparty/javascriptcore/VERSION src/3rdparty/javascriptcore/VERSION.md"
+
     system "./configure", *args
     system "make"
     ENV.deparallelize
