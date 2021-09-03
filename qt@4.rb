@@ -4,7 +4,7 @@ class QtAT4 < Formula
   url "https://download.qt.io/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/4.8/4.8.7/qt-everywhere-opensource-src-4.8.7.tar.gz"
   sha256 "e2882295097e47fe089f8ac741a95fef47e0a73a3f3cdf21b56990638f626ea0"
-  revision 6
+  revision 7
 
   head "https://code.qt.io/qt/qt.git", branch: "4.8"
 
@@ -64,6 +64,12 @@ class QtAT4 < Formula
   patch :p1 do
     url "https://raw.githubusercontent.com/cartr/homebrew-qt4/b7bc7818aa11c809209032554a990b1cef7edacc/patches/qobject-spurious-warnings.patch"
     sha256 "5e81df9a1c35a5aec21241a82707ad6ac198b2e44928389722b64da341260c5d"
+  end
+
+  # Patch to fix build on macOS Big Sur
+  patch do
+    url "https://raw.githubusercontent.com/qkdreyer/homebrew-qt4/98a906e1ad47106c65021150938de61138799ea8/patches/qt4-bigsur.patch"
+    sha256 "f2012863e13914dbb62ccc9d99d6c9e662c37491c7b93e9df6347a75e8137dbb"
   end
 
   def install
