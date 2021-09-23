@@ -66,6 +66,12 @@ class QtAT4 < Formula
     sha256 "5e81df9a1c35a5aec21241a82707ad6ac198b2e44928389722b64da341260c5d"
   end
 
+  # Patch to fix build on macOS Big Sur
+  patch do
+    url "https://raw.githubusercontent.com/cartr/homebrew-qt4/98a906e1ad47106c65021150938de61138799ea8/patches/qt4-bigsur.patch"
+    sha256 "f2012863e13914dbb62ccc9d99d6c9e662c37491c7b93e9df6347a75e8137dbb"
+  end
+
   def install
     if MacOS.sdk_path_if_needed
       # Qt attempts to build with a 10.4 deployment target, even though
@@ -141,6 +147,9 @@ class QtAT4 < Formula
 "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
     inreplace "tools/macdeployqt/macdeployqt/main.cpp", 'deploymentInfo.qtPath + "/plugins"',
 "\"#{HOMEBREW_PREFIX}/lib/qt4/plugins\""
+
+    # Patch to fix build on macOS Big Sur
+    system "mv src/3rdparty/javascriptcore/VERSION src/3rdparty/javascriptcore/VERSION.md"
 
     system "./configure", *args
     system "make"
