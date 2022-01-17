@@ -5,22 +5,22 @@ class QtWebkitAT23 < Formula
   sha256 "c6cfa9d068f7eb024fee3f6c24f5b8b726997f669007587f35ed4a97d40097ca"
   revision 1
 
-  bottle do
-    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
-    sha256 mojave:      "773ffe1a0c26ab27824bed4d1d5fa55655ca0f454cc938585d122ae000fd21ff"
-    sha256 high_sierra: "5dd5a1c9a191e9d2c4245cad33db18044fcb501f9af3128916827eba44282ebb"
-    sha256 sierra:      "e01b4ee5cc9abc69bebf01f104ea9d74f3af840160d977e6d81f80d5b8bf5e4f"
-    sha256 el_capitan:  "fd1d1b30bb87d94e140dcdfee41ac69383b590c6166deee4056c06fa638dc8ff"
-    sha256 yosemite:    "3b88371ffd6fb1a671e47867a9cc3561bcb4af65cc9c6dde644d9cb4aac6311d"
-  end
+  # bottle do
+  #   root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
+  #   sha256 mojave:      "773ffe1a0c26ab27824bed4d1d5fa55655ca0f454cc938585d122ae000fd21ff"
+  #   sha256 high_sierra: "5dd5a1c9a191e9d2c4245cad33db18044fcb501f9af3128916827eba44282ebb"
+  #   sha256 sierra:      "e01b4ee5cc9abc69bebf01f104ea9d74f3af840160d977e6d81f80d5b8bf5e4f"
+  #   sha256 el_capitan:  "fd1d1b30bb87d94e140dcdfee41ac69383b590c6166deee4056c06fa638dc8ff"
+  #   sha256 yosemite:    "3b88371ffd6fb1a671e47867a9cc3561bcb4af65cc9c6dde644d9cb4aac6311d"
+  # end
 
-  depends_on "cartr/qt4/qt@4"
+  depends_on "cis-muzahid/qt4/qt@4"
 
   # Put data and import files into this formula's cellar instead of installing them globally.
   patch :DATA
 
   def install
-    ENV["QTDIR"] = Formula["cartr/qt4/qt@4"].opt_prefix
+    ENV["QTDIR"] = Formula["cis-muzahid/qt4/qt@4"].opt_prefix
     ENV["INSTALL_DATA"] = "#{prefix}/etc/qt4"
     ENV["INSTALL_LIBS"] = lib
     system "Tools/Scripts/build-webkit", "--qt", "--no-webkit2", "--no-video", "--install-headers=#{include}",
