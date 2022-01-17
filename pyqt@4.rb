@@ -5,19 +5,19 @@ class PyqtAT4 < Formula
   sha256 "3224ab2c4d392891eb0abbc2bf076fef2ead3a5bb36ceae2383df4dda00ccce5"
   revision 1
 
-  bottle do
-    rebuild 1
-    root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
-    sha256 mojave:      "e44d7923a06753626ffc9bf6736b9641eb2b653bbd6ea34c841e1aaf2b9aadae"
-    sha256 high_sierra: "5c6d1faf80702fbf842192da0823615a933b4e6198824cf923c2ad52da5c598c"
-    sha256 sierra:      "60e060eea471ae89cad6c16c14f4c7d3ad300840de3a4694259166ce91b377f2"
-    sha256 el_capitan:  "73742cd1d51d3cf121e36a15fdde6ebe0d4c55abb5ca45a219a1776cec3f5b6d"
-    sha256 yosemite:    "ea4bcda9e317579d71969c231cb3dcf3dd84b1aeb5d8cecd50ca128645e38838"
-  end
+  # bottle do
+  #   rebuild 1
+  #   root_url "https://github.com/cartr/homebrew-qt4-bottles/releases/download/autobottle-qt4"
+  #   sha256 mojave:      "e44d7923a06753626ffc9bf6736b9641eb2b653bbd6ea34c841e1aaf2b9aadae"
+  #   sha256 high_sierra: "5c6d1faf80702fbf842192da0823615a933b4e6198824cf923c2ad52da5c598c"
+  #   sha256 sierra:      "60e060eea471ae89cad6c16c14f4c7d3ad300840de3a4694259166ce91b377f2"
+  #   sha256 el_capitan:  "73742cd1d51d3cf121e36a15fdde6ebe0d4c55abb5ca45a219a1776cec3f5b6d"
+  #   sha256 yosemite:    "ea4bcda9e317579d71969c231cb3dcf3dd84b1aeb5d8cecd50ca128645e38838"
+  # end
 
   option "without-python@2", "Build without python 2 support"
-  depends_on "cartr/qt4/qt@4"
-  depends_on "cartr/qt4/qt-webkit@2.3" => :recommended
+  depends_on "cis-muzahid/qt4/qt@4"
+  depends_on "cis-muzahid/qt4/qt-webkit@2.3" => :recommended
   depends_on "python" => :optional
 
   if build.without?("python") && build.without?("python@2")
@@ -62,8 +62,8 @@ class PyqtAT4 < Formula
         cp_r(Dir.glob("*"), dir)
         cd dir do
           system python, "configure.py", *args
-          inreplace "pyqtconfig.py", "#{HOMEBREW_CELLAR}/#{Formula["cartr/qt4/qt@4"].name}/#{Formula["cartr/qt4/qt@4"].pkg_version}",
-            Formula["cartr/qt4/qt@4"].opt_prefix
+          inreplace "pyqtconfig.py", "#{HOMEBREW_CELLAR}/#{Formula["cis-muzahid/qt4/qt@4"].name}/#{Formula["cis-muzahid/qt4/qt@4"].pkg_version}",
+            Formula["cis-muzahid/qt4/qt@4"].opt_prefix
           (lib/"python#{version}/site-packages/PyQt4").install "pyqtconfig.py"
         end
       ensure
