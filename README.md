@@ -1,3 +1,9 @@
+**NOTICE:** These packages probably don't work on ARM-based Macs or more recent versions of macOS. I don't know for sure because I don't use a Mac anymore. I'm leaving this repository up to avoid breaking people's builds, but I can't do much to help you with it. (You should consider migrating your software to a newer version of Qt.)
+
+Please let me know at carter.sande@duodecima.technology if you are interested in maintaining this project.
+
+----------------------
+
 # homebrew-qt4
 
 This Homebrew tap allows you to install Qt4 (and various packages that depend on it) on macOS Sierra and newer. You can install it like this:
