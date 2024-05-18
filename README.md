@@ -14,3 +14,7 @@ This Homebrew tap allows you to install Qt4 (and various packages that depend on
 Feel free to submit an issue or pull request if you run into any problems or have any suggestions for improvements to the packages.
 
 **Please note:** Qt4 is unsupported by its creators, so there are likely security/usability problems with it that will never be resolved. If you can, please consider migrating your projects to Qt5.
+
+## Apple Silicon / "M-series" Macs
+
+To use this software on Macs with ARM processors, you might need to [install a separate copy of Homebrew with Rosetta emulation](https://stackoverflow.com/a/64951025).
